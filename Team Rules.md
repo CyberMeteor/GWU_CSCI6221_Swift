@@ -8,7 +8,7 @@
    - Shi Qiu
   
 2. How do you intent to colaborate: synchronously or asynchronously
-   Synchronously.
+   - Synchronously.
 
 3. What time of the week all of you agree to work together
-   Wednesday afternoon.
+   - Wednesday afternoon.
