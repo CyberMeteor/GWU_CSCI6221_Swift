@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87B3C35D2BB1C99F002D13EC /* Tuesday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 87B3C35C2BB1C99F002D13EC /* Tuesday.mp3 */; };
 		F2B1E44E2BAB83A10000DEB4 /* Swift_KaraokeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B1E44D2BAB83A10000DEB4 /* Swift_KaraokeApp.swift */; };
 		F2B1E4502BAB83A10000DEB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B1E44F2BAB83A10000DEB4 /* ContentView.swift */; };
 		F2B1E4522BAB83A30000DEB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B1E4512BAB83A30000DEB4 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		87B3C35C2BB1C99F002D13EC /* Tuesday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Tuesday.mp3; sourceTree = "<group>"; };
 		F2B1E44A2BAB83A10000DEB4 /* Swift-Karaoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Karaoke.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B1E44D2BAB83A10000DEB4 /* Swift_KaraokeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_KaraokeApp.swift; sourceTree = "<group>"; };
 		F2B1E44F2BAB83A10000DEB4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				F2B1E44D2BAB83A10000DEB4 /* Swift_KaraokeApp.swift */,
 				F2B1E44F2BAB83A10000DEB4 /* ContentView.swift */,
+				87B3C35C2BB1C99F002D13EC /* Tuesday.mp3 */,
 				F2B1E4512BAB83A30000DEB4 /* Assets.xcassets */,
 				F2B1E4532BAB83A30000DEB4 /* Preview Content */,
 			);
@@ -231,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87B3C35D2BB1C99F002D13EC /* Tuesday.mp3 in Resources */,
 				F2B1E4552BAB83A30000DEB4 /* Preview Assets.xcassets in Resources */,
 				F2B1E4522BAB83A30000DEB4 /* Assets.xcassets in Resources */,
 			);
