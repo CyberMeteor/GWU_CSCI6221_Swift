@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		875EDB3D2BBB2FD4005A82B3 /* KaraokeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875EDB3C2BBB2FD4005A82B3 /* KaraokeMode.swift */; };
+		875EDB3F2BBB2FEE005A82B3 /* ListenTogether.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875EDB3E2BBB2FEE005A82B3 /* ListenTogether.swift */; };
+		875EDB412BBB301A005A82B3 /* MusicLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875EDB402BBB301A005A82B3 /* MusicLibrary.swift */; };
+		875EDB432BBB302D005A82B3 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875EDB422BBB302D005A82B3 /* MusicPlayer.swift */; };
+		875EDB452BBB3047005A82B3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875EDB442BBB3047005A82B3 /* Profile.swift */; };
 		87B3C35D2BB1C99F002D13EC /* Tuesday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 87B3C35C2BB1C99F002D13EC /* Tuesday.mp3 */; };
 		F2B1E44E2BAB83A10000DEB4 /* Swift_KaraokeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B1E44D2BAB83A10000DEB4 /* Swift_KaraokeApp.swift */; };
 		F2B1E4502BAB83A10000DEB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B1E44F2BAB83A10000DEB4 /* ContentView.swift */; };
@@ -35,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		875EDB3C2BBB2FD4005A82B3 /* KaraokeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaraokeMode.swift; sourceTree = "<group>"; };
+		875EDB3E2BBB2FEE005A82B3 /* ListenTogether.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenTogether.swift; sourceTree = "<group>"; };
+		875EDB402BBB301A005A82B3 /* MusicLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLibrary.swift; sourceTree = "<group>"; };
+		875EDB422BBB302D005A82B3 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
+		875EDB442BBB3047005A82B3 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		87B3C35C2BB1C99F002D13EC /* Tuesday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Tuesday.mp3; sourceTree = "<group>"; };
 		F2B1E44A2BAB83A10000DEB4 /* Swift-Karaoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Karaoke.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B1E44D2BAB83A10000DEB4 /* Swift_KaraokeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_KaraokeApp.swift; sourceTree = "<group>"; };
@@ -73,6 +83,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		875EDB3B2BBB2F9D005A82B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				875EDB3C2BBB2FD4005A82B3 /* KaraokeMode.swift */,
+				875EDB3E2BBB2FEE005A82B3 /* ListenTogether.swift */,
+				875EDB402BBB301A005A82B3 /* MusicLibrary.swift */,
+				875EDB422BBB302D005A82B3 /* MusicPlayer.swift */,
+				875EDB442BBB3047005A82B3 /* Profile.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F2B1E4412BAB83A10000DEB4 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +118,7 @@
 		F2B1E44C2BAB83A10000DEB4 /* Swift-Karaoke */ = {
 			isa = PBXGroup;
 			children = (
+				875EDB3B2BBB2F9D005A82B3 /* Views */,
 				F2B1E44D2BAB83A10000DEB4 /* Swift_KaraokeApp.swift */,
 				F2B1E44F2BAB83A10000DEB4 /* ContentView.swift */,
 				87B3C35C2BB1C99F002D13EC /* Tuesday.mp3 */,
@@ -261,8 +284,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				875EDB3F2BBB2FEE005A82B3 /* ListenTogether.swift in Sources */,
 				F2B1E4502BAB83A10000DEB4 /* ContentView.swift in Sources */,
+				875EDB432BBB302D005A82B3 /* MusicPlayer.swift in Sources */,
+				875EDB452BBB3047005A82B3 /* Profile.swift in Sources */,
 				F2B1E44E2BAB83A10000DEB4 /* Swift_KaraokeApp.swift in Sources */,
+				875EDB412BBB301A005A82B3 /* MusicLibrary.swift in Sources */,
+				875EDB3D2BBB2FD4005A82B3 /* KaraokeMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

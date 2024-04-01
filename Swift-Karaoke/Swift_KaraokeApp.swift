@@ -11,7 +11,7 @@ import SwiftUI
 struct Swift_KaraokeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(expandSheet: .constant(true), animation: Namespace().wrappedValue)
+            ContentView()
         }
     }
 }
