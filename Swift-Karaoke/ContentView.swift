@@ -26,7 +26,7 @@ struct ContentView: View {
                     Image(systemName: "play.circle")
                 }
             
-            MusicLibrary()
+            MusicLibrary(expandSheet: .constant(true), animation: Namespace().wrappedValue)
                 .tabItem() {
                     Image(systemName: "bookmark.circle")
                 }
