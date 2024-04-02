@@ -1,5 +1,5 @@
 class Song:
-    def __init__(self, name, path="", authors=None, lyric_path="", karaoke_path="", year=2000, genre="Unknown", played_times=0, album="Unknown", rating=0):
+    def __init__(self, name, path="", authors=None, lyric_path="", karaoke_path="", year=0000, genre="Unknown", played_times=0, album="Unknown", rating=0):
         self.name = name  # 新添加的歌曲名称属性
         self.path = path
         self.authors = authors if authors is not None else []
