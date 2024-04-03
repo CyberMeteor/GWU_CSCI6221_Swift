@@ -42,6 +42,44 @@ class Song {
         playedTimes += 1
         print("Playing \(name)...")
     }
+    func displayLyrics() {
+        guard let lrcPath = URL(string: lyricPath) else {
+            print("Invalid file path")
+            return
+        }
+        
+        do {
+            let lrcContent = try String(contentsOf: lrcPath, encoding: .utf8)
+            let lines = lrcContent.components(separatedBy: .newlines)
+            var lyrics = [(time: TimeInterval, text: String)]()
+            
+            let pattern = "\\[(\\d+):(\\d+\\.\\d+)\\](.*)"
+            let regex = try NSRegularExpression(pattern: pattern)
+            
+            for line in lines {
+                let nsRange = NSRange(line.startIndex..<line.endIndex, in: line)
+                if let match = regex.firstMatch(in: line, options: [], range: nsRange) {
+                    let minutes = Double(line[Range(match.range(at: 1), in: line)!])!
+                    let seconds = Double(line[Range(match.range(at: 2), in: line)!])!
+                    let text = String(line[Range(match.range(at: 3), in: line)!])
+                    let timeInSeconds = minutes * 60 + seconds
+                    lyrics.append((time: timeInSeconds, text: text))
+                }
+            }
+            
+            let startTime = Date()
+            for lyric in lyrics {
+                let currentTime = Date().timeIntervalSince(startTime)
+                let sleepTime = lyric.time - currentTime
+                if sleepTime > 0 {
+                    Thread.sleep(forTimeInterval: sleepTime)
+                }
+                print(lyric.text)
+            }
+        } catch {
+            print("Failed to read the lyrics file: \(error)")
+        }
+    }
 }
 
 
@@ -100,16 +138,20 @@ class Playlist {
 //testing
 ////////////////////////////////
 
-let song1 = Song(name: "Song 1", path: "Music_Library/Karaoke_Vocals/Adele - Rolling in the Deep (Explicit)-vocals-C minor-105bpm-440hz.mp3", authors: ["Author1"], year: 2020, genre: "Pop")
-let song2 = Song(name: "Song 2", path: "path/to/song2.mp3", authors: ["Author2"], year: 2021, genre: "Rock")
+func testDisplayLyrics() {
+    // 此处假设LRC文件名为"Adele_rolling_in_the_deep_english_only.lrc"，并已添加到项目中
+    let song = Song(name: "Rolling in the Deep",
+                    path: "Music_Library/Karaoke_Vocals/Adele - Rolling in the Deep (Explicit)-vocals-C minor-105bpm-440hz.mp3",
+                    authors: ["Adele"],
+                    lyricPath: "Adele_rolling_in_the_deep_english_only.lrc", // 此处使用文件名，确保与项目中的文件名匹配
+                    year: 2010,
+                    genre: "Pop")
+    
+    // 调用displayLyrics方法
+    song.displayLyrics()
+}
 
-// 创建Playlist实例并添加歌曲
-let playlist = Playlist(name: "My Favorite Playlist")
-playlist.addSong(song1)
-playlist.addSong(song2)
+// 运行测试函数
+testDisplayLyrics()
 
-// 显示播放列表中的歌曲名称
-playlist.displaySongs()
-
-// 播放播放列表
-playlist.play()
+RunLoop.main.run(until: Date(timeIntervalSinceNow: 60))
