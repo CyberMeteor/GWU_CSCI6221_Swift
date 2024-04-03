@@ -1,3 +1,6 @@
+import time
+import re
+
 class Song:
     def __init__(self, name, path="", authors=None, lyric_path="", karaoke_path="", year=0000, genre="Unknown", played_times=0, album="Unknown", rating=0):
         self.name = name  # 歌曲名称属性
@@ -28,6 +31,33 @@ class Song:
     def play_song(self):
         self.played_times += 1
         print(f"Playing {self.name}...")
+        
+    def display_lyrics(self):
+        lrc_path=self.lyric_path
+        # 读取和解析LRC文件
+        with open(lrc_path, 'r', encoding='utf-8') as file:
+            lines = file.readlines()
+        
+        # 解析每行，提取时间和歌词
+        pattern = re.compile(r'\[(\d+):(\d+\.\d+)\](.*)')
+        lyrics = []
+        for line in lines:
+            match = pattern.match(line)
+            if match:
+                minutes = int(match.group(1))
+                seconds = float(match.group(2))
+                text = match.group(3)
+                time_in_seconds = minutes * 60 + seconds
+                lyrics.append((time_in_seconds, text))
+        
+        # 按时间顺序显示歌词
+        start_time = time.time()
+        for lyric in lyrics:
+            now = time.time() - start_time
+            sleep_time = lyric[0] - now
+            if sleep_time > 0:
+                time.sleep(sleep_time)
+            print(lyric[1])
 
 
 
