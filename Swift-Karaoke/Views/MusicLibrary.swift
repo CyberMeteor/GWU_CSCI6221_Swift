@@ -202,6 +202,7 @@ struct MusicLibrary: View {
 
 
 struct PlaylistSelectionView: View {
+    @Environment(\.presentationMode) var presentationMode
     @Binding var playlists: [Playlist]
     @Binding var selectedSong: Song?
     @State private var newPlaylistName: String = ""
@@ -242,13 +243,15 @@ struct PlaylistSelectionView: View {
             newPlaylist.addSong(song)
         }
         playlists.append(newPlaylist)
-        newPlaylistName = "" // 清空输入框
+        newPlaylistName = "" 
     }
 
     private func addToPlaylist(playlist: Playlist) {
         guard let song = selectedSong else { return }
         if !playlist.songs.contains(where: { $0.name == song.name }) {
             playlist.addSong(song)
+
+            presentationMode.wrappedValue.dismiss()
         }
     }
 }
