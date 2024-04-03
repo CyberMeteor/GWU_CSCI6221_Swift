@@ -137,7 +137,7 @@ class Playlist {
 
 //testing
 ////////////////////////////////
-
+/*
 func testDisplayLyrics() {
     // 此处假设LRC文件名为"Adele_rolling_in_the_deep_english_only.lrc"，并已添加到项目中
     let song = Song(name: "Rolling in the Deep",
@@ -155,3 +155,5 @@ func testDisplayLyrics() {
 testDisplayLyrics()
 
 RunLoop.main.run(until: Date(timeIntervalSinceNow: 60))
+
+*/
