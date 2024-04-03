@@ -203,12 +203,55 @@ struct MusicLibrary: View {
     }
 }
 
+
 struct PlaylistSelectionView: View {
     @Binding var playlists: [Playlist]
     @Binding var selectedSong: Song?
+    @State private var newPlaylistName: String = ""
 
     var body: some View {
-        // 选择播放列表的UI逻辑
-        Text("这里是播放列表选择视图")
+        NavigationView {
+            List {
+                Section(header: Text("新建播放列表")) {
+                    HStack {
+                        TextField("播放列表名称", text: $newPlaylistName)
+                        Button(action: {
+                            addNewPlaylist()
+                        }) {
+                            Image(systemName: "plus.circle.fill")
+                                .foregroundColor(.green)
+                        }
+                    }
+                }
+                
+                Section(header: Text("现有播放列表")) {
+                    ForEach(playlists, id: \.name) { playlist in
+                        Button(action: {
+                            addToPlaylist(playlist: playlist)
+                        }) {
+                            Text(playlist.name)
+                        }
+                    }
+                }
+            }
+            .navigationBarTitle(Text("选择播放列表"), displayMode: .inline)
+        }
+    }
+
+    private func addNewPlaylist() {
+        guard !newPlaylistName.isEmpty else { return }
+        let newPlaylist = Playlist(name: newPlaylistName)
+        if let song = selectedSong {
+            newPlaylist.addSong(song)
+        }
+        playlists.append(newPlaylist)
+        newPlaylistName = "" // 清空输入框
+    }
+
+    private func addToPlaylist(playlist: Playlist) {
+        guard let song = selectedSong else { return }
+        if !playlist.songs.contains(where: { $0.name == song.name }) {
+            playlist.addSong(song)
+        }
     }
 }
