@@ -145,20 +145,31 @@ class Playlist {
 struct MusicLibrary: View {
     @State var songs: [Song] = [
         Song(name: "Rolling in the Deep", path: "Music_Library/Karaoke_Vocals/Adele - Rolling in the Deep (Explicit)-vocals-C minor-105bpm-440hz.mp3", authors: ["Author1"], year: 2020, genre: "Pop"),
-        Song(name: "Song 2", path: "path/to/song2.mp3", authors: ["Author2"], year: 2021, genre: "Rock")
+        Song(name: "Song 2", path: "path/to/song2.mp3", authors: ["Author2"], year: 2021, genre: "Rock"),
+        
     ]
     @State var playlists: [Playlist] = []
-    @State private var showingPlaylistSelection = false
-    @State private var selectedSong: Song?
 
     init() {
-        var playlist = Playlist(name: "My Favorite Playlist")
-        playlist.addSong(songs[0])
-        playlist.addSong(songs[1])
 
-        var playlist = Playlist(name: "Generic Playlist")
+        var myFavoritePlaylist = Playlist(name: "My Favorite Playlist")
+        myFavoritePlaylist.addSong(songs[0])
+        myFavoritePlaylist.addSong(songs[1])
 
-        _playlists = State(initialValue: [playlist])
+        let popPlaylist = generatePlaylistByGenre(genre: "Pop")
+
+
+        _playlists = State(initialValue: [myFavoritePlaylist, popPlaylist])
+    }
+
+    func generatePlaylistByGenre(genre: String) -> Playlist {
+        let playlist = Playlist(name: "Generic Playlist: \(genre)")
+        for song in songs {
+            if song.genre == genre {
+                playlist.addSong(song)
+            }
+        }
+        return playlist
     }
 
     var body: some View {
