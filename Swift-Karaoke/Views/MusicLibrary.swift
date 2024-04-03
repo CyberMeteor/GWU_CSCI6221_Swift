@@ -141,7 +141,6 @@ class Playlist {
 }
 
 
-
 struct MusicLibrary: View {
     @State var songs: [Song] = [
         Song(name: "Rolling in the Deep", path: "Music_Library/Karaoke_Vocals/Adele - Rolling in the Deep (Explicit)-vocals-C minor-105bpm-440hz.mp3", authors: ["Author1"], year: 2020, genre: "Pop"),
@@ -165,20 +164,18 @@ struct MusicLibrary: View {
                 Section(header: Text("Songs")) {
                     ForEach(songs, id: \.name) { song in
                         HStack {
-                            Button(action: {
-                                // 播放选中的歌曲
+                            // 歌曲名作为按钮，点击播放歌曲
+                            Button(song.name) {
                                 song.playSong()
-                            }) {
-                                Text(song.name)
                             }
                             Spacer()
+                            // 加号按钮用于添加歌曲到播放列表
                             Button(action: {
-                                // 显示播放列表选择
                                 self.selectedSong = song
                                 self.showingPlaylistSelection = true
                             }) {
                                 Image(systemName: "plus")
-                            }
+                            }.buttonStyle(BorderlessButtonStyle()) // 使用无边框按钮样式，避免影响布局
                         }
                     }
                 }
@@ -186,7 +183,6 @@ struct MusicLibrary: View {
                 Section(header: Text("Playlists")) {
                     ForEach(playlists, id: \.name) { playlist in
                         Button(action: {
-                            // 播放选中的播放列表
                             playlist.play()
                         }) {
                             Text(playlist.name)
@@ -196,12 +192,12 @@ struct MusicLibrary: View {
             }
             .navigationBarTitle("Music Library")
             .sheet(isPresented: $showingPlaylistSelection) {
-                // 实现添加到播放列表的UI逻辑
                 PlaylistSelectionView(playlists: $playlists, selectedSong: $selectedSong)
             }
         }
     }
 }
+
 
 
 
