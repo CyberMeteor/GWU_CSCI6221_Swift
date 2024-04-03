@@ -241,10 +241,13 @@ struct PlaylistSelectionView: View {
         let newPlaylist = Playlist(name: newPlaylistName)
         if let song = selectedSong {
             newPlaylist.addSong(song)
+            playlists.append(newPlaylist)
+            newPlaylistName = ""
+            // 添加成功后关闭视图
+            presentationMode.wrappedValue.dismiss()
         }
-        playlists.append(newPlaylist)
-        newPlaylistName = "" 
     }
+
 
     private func addToPlaylist(playlist: Playlist) {
         guard let song = selectedSong else { return }
