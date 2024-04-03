@@ -249,17 +249,21 @@ struct PlaylistSelectionView: View {
                     }
                 }
                 
-                Section(header: Text("现有播放列表")) {
+                Section(header: Text("Playlists")) {
                     ForEach(playlists, id: \.name) { playlist in
                         Button(action: {
-                            addToPlaylist(playlist: playlist)
+                            self.selectedPlaylist = playlist
+                            self.showingPlaylistDetails = true
                         }) {
                             Text(playlist.name)
                         }
                     }
                 }
             }
-            .navigationBarTitle(Text("选择播放列表"), displayMode: .inline)
+            .navigationBarTitle("Music Library")
+            .sheet(isPresented: $showingPlaylistDetails) {
+                if let selectedPlaylist = selectedPlaylist {
+                    PlaylistDetailView(playlist: selectedPlaylist)
         }
     }
 
