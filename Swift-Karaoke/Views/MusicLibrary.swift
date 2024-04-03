@@ -145,31 +145,18 @@ class Playlist {
 struct MusicLibrary: View {
     @State var songs: [Song] = [
         Song(name: "Rolling in the Deep", path: "Music_Library/Karaoke_Vocals/Adele - Rolling in the Deep (Explicit)-vocals-C minor-105bpm-440hz.mp3", authors: ["Author1"], year: 2020, genre: "Pop"),
-        Song(name: "Song 2", path: "path/to/song2.mp3", authors: ["Author2"], year: 2021, genre: "Rock"),
-        
+        Song(name: "Song 2", path: "path/to/song2.mp3", authors: ["Author2"], year: 2021, genre: "Rock")
     ]
     @State var playlists: [Playlist] = []
+    @State private var showingPlaylistSelection = false
+    @State private var selectedSong: Song?
 
     init() {
+        var playlist = Playlist(name: "My Favorite Playlist")
+        playlist.addSong(songs[0])
+        playlist.addSong(songs[1])
 
-        var myFavoritePlaylist = Playlist(name: "My Favorite Playlist")
-        myFavoritePlaylist.addSong(songs[0])
-        myFavoritePlaylist.addSong(songs[1])
-
-        let popPlaylist = generatePlaylistByGenre(genre: "Pop")
-
-
-        _playlists = State(initialValue: [myFavoritePlaylist, popPlaylist])
-    }
-
-    func generatePlaylistByGenre(genre: String) -> Playlist {
-        let playlist = Playlist(name: "Generic Playlist: \(genre)")
-        for song in songs {
-            if song.genre == genre {
-                playlist.addSong(song)
-            }
-        }
-        return playlist
+        _playlists = State(initialValue: [playlist])
     }
 
     var body: some View {
@@ -222,7 +209,6 @@ struct PlaylistSelectionView: View {
     @Binding var playlists: [Playlist]
     @Binding var selectedSong: Song?
     @State private var newPlaylistName: String = ""
-    @Environment(\.presentationMode) var presentationMode // 添加这行
 
     var body: some View {
         NavigationView {
@@ -261,14 +247,12 @@ struct PlaylistSelectionView: View {
         }
         playlists.append(newPlaylist)
         newPlaylistName = "" // 清空输入框
-        presentationMode.wrappedValue.dismiss() // 添加歌曲后关闭视图
     }
 
     private func addToPlaylist(playlist: Playlist) {
         guard let song = selectedSong else { return }
         if !playlist.songs.contains(where: { $0.name == song.name }) {
             playlist.addSong(song)
-            presentationMode.wrappedValue.dismiss() // 添加歌曲后关闭视图
         }
     }
 }
