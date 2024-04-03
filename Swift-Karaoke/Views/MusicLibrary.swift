@@ -151,12 +151,25 @@ struct MusicLibrary: View {
     @State private var selectedSong: Song?
 
     init() {
-        var playlist = Playlist(name: "My Favorite Playlist")
-        playlist.addSong(songs[0])
-        playlist.addSong(songs[1])
-
-        _playlists = State(initialValue: [playlist])
+        
+        let songs: [Song] = [
+            Song(name: "Rolling in the Deep", path: "Music_Library/Karaoke_Vocals/Adele - Rolling in the Deep (Explicit)-vocals-C minor-105bpm-440hz.mp3", authors: ["Adele Adkins", "Paul Epworth"], year: 2010, genre: "Pop", album: "21"),
+            Song(name: "Someone Like You", path: "Music_Library/Karaoke_Vocals/Adele - Someone Like You-vocals-C minor-105bpm-440hz.mp3", authors: ["Adele Adkins", "Dan Wilson"], year: 2011, genre: "Pop", album: "21"),
+            
+        ]
+        let myFavoritePlaylist = Playlist(name: "My Favorite Playlist", songs: [songs[0], songs[1]])
+        
+        
+        let popSongs = songs.filter { $0.genre == "Pop" }
+        let popPlaylist = Playlist(name: "Pop", songs: popSongs)
+        
+        
+        _playlists = State(initialValue: [myFavoritePlaylist, popPlaylist])
+        
+        
+        _songs = State(initialValue: songs)
     }
+
 
     var body: some View {
         NavigationView {
