@@ -145,31 +145,20 @@ class Playlist {
 struct MusicLibrary: View {
     @State var songs: [Song] = [
         Song(name: "Rolling in the Deep", path: "Music_Library/Karaoke_Vocals/Adele - Rolling in the Deep (Explicit)-vocals-C minor-105bpm-440hz.mp3", authors: ["Author1"], year: 2020, genre: "Pop"),
-        Song(name: "Song 2", path: "path/to/song2.mp3", authors: ["Author2"], year: 2021, genre: "Rock"),
-        
+        Song(name: "Song 2", path: "path/to/song2.mp3", authors: ["Author2"], year: 2021, genre: "Rock")
     ]
     @State var playlists: [Playlist] = []
+    @State private var showingPlaylistSelection = false
+    @State private var selectedSong: Song?
 
     init() {
+        var playlist = Playlist(name: "My Favorite Playlist")
+        playlist.addSong(songs[0])
+        playlist.addSong(songs[1])
 
-        var myFavoritePlaylist = Playlist(name: "My Favorite Playlist")
-        myFavoritePlaylist.addSong(songs[0])
-        myFavoritePlaylist.addSong(songs[1])
+        var playlist = Playlist(name: "Generic Playlist")
 
-        let popPlaylist = generatePlaylistByGenre(genre: "Pop")
-
-
-        _playlists = State(initialValue: [myFavoritePlaylist, popPlaylist])
-    }
-
-    func generatePlaylistByGenre(genre: String) -> Playlist {
-        let playlist = Playlist(name: "Generic Playlist: \(genre)")
-        for song in songs {
-            if song.genre == genre {
-                playlist.addSong(song)
-            }
-        }
-        return playlist
+        _playlists = State(initialValue: [playlist])
     }
 
     var body: some View {
@@ -199,7 +188,8 @@ struct MusicLibrary: View {
                 Section(header: Text("Playlists")) {
                     ForEach(playlists, id: \.name) { playlist in
                         Button(action: {
-                            self.selectedPlaylist = playlist
+                            // 播放选中的播放列表
+                            playlist.play()
                         }) {
                             Text(playlist.name)
                         }
@@ -207,25 +197,14 @@ struct MusicLibrary: View {
                 }
             }
             .navigationBarTitle("Music Library")
-            .sheet(item: $selectedPlaylist) { playlist in
-                PlaylistDetailView(playlist: playlist)
+            .sheet(isPresented: $showingPlaylistSelection) {
+                // 实现添加到播放列表的UI逻辑
+                PlaylistSelectionView(playlists: $playlists, selectedSong: $selectedSong)
             }
         }
     }
 }
 
-struct PlaylistDetailView: View {
-    var playlist: Playlist
-    
-    var body: some View {
-        NavigationView {
-            List(playlist.songs, id: \.name) { song in
-                Text(song.name)
-            }
-            .navigationBarTitle(Text(playlist.name), displayMode: .inline)
-        }
-    }
-}
 
 
 struct PlaylistSelectionView: View {
@@ -249,21 +228,17 @@ struct PlaylistSelectionView: View {
                     }
                 }
                 
-                Section(header: Text("Playlists")) {
+                Section(header: Text("现有播放列表")) {
                     ForEach(playlists, id: \.name) { playlist in
                         Button(action: {
-                            self.selectedPlaylist = playlist
-                            self.showingPlaylistDetails = true
+                            addToPlaylist(playlist: playlist)
                         }) {
                             Text(playlist.name)
                         }
                     }
                 }
             }
-            .navigationBarTitle("Music Library")
-            .sheet(isPresented: $showingPlaylistDetails) {
-                if let selectedPlaylist = selectedPlaylist {
-                    PlaylistDetailView(playlist: selectedPlaylist)
+            .navigationBarTitle(Text("选择播放列表"), displayMode: .inline)
         }
     }
 
