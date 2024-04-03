@@ -1,6 +1,6 @@
 class Song:
     def __init__(self, name, path="", authors=None, lyric_path="", karaoke_path="", year=0000, genre="Unknown", played_times=0, album="Unknown", rating=0):
-        self.name = name  # 新添加的歌曲名称属性
+        self.name = name  # 歌曲名称属性
         self.path = path
         self.authors = authors if authors is not None else []
         self.lyric_path = lyric_path
@@ -11,9 +11,7 @@ class Song:
         self.album = album
         self.rating = rating
 
-    def get_song_name(self):
-        """返回歌曲的名称"""
-        return self.name
+
 
     def display_info(self):
         print(f"Name: {self.name}")  # 显示歌曲名称
@@ -47,7 +45,7 @@ class Playlist:
     def display_songs(self):
         print(f"Playlist: {self.name}")
         for song in self.songs:
-            print(song.get_song_name())
+            print(song.name)
             
 
     def play(self):

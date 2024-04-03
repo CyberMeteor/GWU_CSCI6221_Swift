@@ -1,7 +1,7 @@
 from songs import *
 
 # 创建Song实例
-song1 = Song(name="Song 1", path="path/to/song1.mp3", authors=["Author1"], year=2020, genre="Pop")
+song1 = Song(name="Song 1", path="Music_Library\Karaoke_Vocals\Adele - Rolling in the Deep (Explicit)-vocals-C minor-105bpm-440hz.mp3", authors=["Author1"], year=2020, genre="Pop")
 song2 = Song(name="Song 2", path="path/to/song2.mp3", authors=["Author2"], year=2021, genre="Rock")
 
 # 创建Playlist实例并添加歌曲
