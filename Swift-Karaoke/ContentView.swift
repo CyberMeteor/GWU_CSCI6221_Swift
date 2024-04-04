@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            KaraokeMode()
+            KaraokeMode(songName: "Seasons In The Sun", artistName: "Westlife")
                 .tabItem() {
                     Image(systemName: "music.mic")
                 }
