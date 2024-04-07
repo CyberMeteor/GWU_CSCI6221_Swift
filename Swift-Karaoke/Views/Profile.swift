@@ -67,6 +67,7 @@ struct Profile: View {
             Image("mm") // 背景图使用同一张 "mm" 图片
                 .resizable()
                 .blur(radius: 10) // 应用模糊效果
+                .overlay(Color.white.opacity(0.7))
                 .edgesIgnoringSafeArea(.all) // 让背景填充到安全区域以外
         )
     }
