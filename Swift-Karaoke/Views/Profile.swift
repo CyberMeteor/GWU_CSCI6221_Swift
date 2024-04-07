@@ -73,4 +73,3 @@ struct Profile_Previews: PreviewProvider {
         Profile()
     }
 }
-这段代码创建了一个包含用户头像、名字、个人描述以及一个带有
