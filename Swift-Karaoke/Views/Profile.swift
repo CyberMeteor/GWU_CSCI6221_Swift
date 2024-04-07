@@ -63,6 +63,12 @@ struct Profile: View {
 
             Spacer() // 用于在底部留出一些空间
         }
+        .background(
+            Image("mm") // 背景图使用同一张 "mm" 图片
+                .resizable()
+                .blur(radius: 10) // 应用模糊效果
+                .edgesIgnoringSafeArea(.all) // 让背景填充到安全区域以外
+        )
     }
 }
 
