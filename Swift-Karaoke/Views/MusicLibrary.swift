@@ -181,9 +181,6 @@ struct MusicLibrary: View {
                             Button(song.name) {
                                 song.playSong()
                             }
-                            .padding(10)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            
                             Spacer()
                             // 加号按钮用于添加歌曲到播放列表
                             Button(action: {
