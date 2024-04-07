@@ -1,13 +1,12 @@
 import SwiftUI
 
 struct Profile: View {
-    let profileImage = "profilePlaceholder" // 请确保你的Assets中有这张图片
-    let userName = "Student beg for A"
-    let userDescription = "Karaoke enthusiast. Love to explore new songs and share with friends."
+    // 假定所有图片都使用 "mm" 这个名称
+    let profileImage = "mm" // 头像图片名称
     let topSongs = [
-        ("Song Title 1", "albumCover1"), // 替换成你的歌曲标题和专辑封面图片名称
-        ("Song Title 2", "albumCover2"),
-        ("Song Title 3", "albumCover3")
+        ("Song Title 1", "mm"), // 歌曲标题和统一使用 "mm" 的专辑封面图片
+        ("Song Title 2", "mm"),
+        ("Song Title 3", "mm")
     ]
 
     var body: some View {
@@ -23,13 +22,13 @@ struct Profile: View {
                 .padding(.top, 20)
 
             // 用户名
-            Text(userName)
+            Text("Student beg for A")
                 .font(.title)
                 .fontWeight(.bold)
                 .padding(.top, 8)
             
             // 用户描述
-            Text(userDescription)
+            Text("Karaoke enthusiast. Love to explore new songs and share with friends.")
                 .font(.body)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
@@ -44,7 +43,7 @@ struct Profile: View {
                 
                 ForEach(topSongs, id: \.0) { song in
                     HStack {
-                        Image(song.1) // 专辑封面图片
+                        Image(song.1) // 使用同一张图片 "mm" 作为专辑封面
                             .resizable()
                             .scaledToFit()
                             .frame(width: 50, height: 50)
@@ -55,7 +54,7 @@ struct Profile: View {
                             .font(.body)
                             .padding(.leading, 10)
                         
-                        Spacer() // 保证HStack内的内容靠左对齐
+                        Spacer()
                     }
                     .padding(.vertical, 3)
                 }
