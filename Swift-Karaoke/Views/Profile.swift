@@ -59,7 +59,7 @@ struct Profile: View {
             .padding(.bottom, 20)
 
             // 显示名为“heatmap”的图片，并将其尺寸调整为原来的50%
-            Image("heatmap")
+            Image("heatmap-removebg-preview")
                 .resizable()
                 .scaledToFit()
                 .frame(width: UIScreen.main.bounds.width * 0.5) // 使用屏幕宽度的50%作为图片宽度
