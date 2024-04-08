@@ -1,79 +1,119 @@
 import SwiftUI
 
 struct Profile: View {
-    // 假定所有图片都使用 "mm" 这个名称
-    let profileImage = "mm" // 头像图片名称
+    // 假设有五个不同的头像图片名称
+    let profileImages = ["mm", "mm2", "mm3", "mm4", "mm5"]
+    let userName = "Student beg for A"
+    let userDescription = "Karaoke enthusiast. Love to explore new songs and share with friends."
     let topSongs = [
-        ("Song Title 1", "mm"), // 歌曲标题和统一使用 "mm" 的专辑封面图片
+        ("Song Title 1", "mm"),
         ("Song Title 2", "mm"),
-        ("Song Title 3", "mm")
+        ("Song Title 3", "mm"),
+        // 更多歌曲...
     ]
 
     var body: some View {
         VStack(alignment: .center) {
-            // 头像
-            Image(profileImage)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 150, height: 150)
-                .clipShape(Circle())
-                .shadow(radius: 10)
-                .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                .padding(.top, 20)
+            // 头像们，水平排列
+            HStack(spacing: 15) {
+                ForEach(0..<profileImages.count, id: \.self) { index in
+                    VStack {
+                        Image(self.profileImages[index])
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 50, height: 50)
+                            .clipShape(Circle())
+                            .shadow(radius: 5)
+                            .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                        
+                        Text("\(index + 1)")
+                            .font(.caption)
+                    }
+                }
+            }
+            .padding(.top, 20)
 
             // 用户名
-            Text("Student beg for A")
+            Text(userName)
                 .font(.title)
                 .fontWeight(.bold)
                 .padding(.top, 8)
             
             // 用户描述
-            Text("Karaoke enthusiast. Love to explore new songs and share with friends.")
+            Text(userDescription)
                 .font(.body)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
                 .padding(.bottom, 20)
-
-            // 最多听歌曲的排名和专辑封面
-            VStack(alignment: .leading) {
-                Text("Top Songs")
-                    .font(.headline)
-                    .padding(.bottom, 5)
-                
-                ForEach(topSongs, id: \.0) { song in
-                    HStack {
-                        Image(song.1) // 使用同一张图片 "mm" 作为专辑封面
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 50, height: 50)
-                            .cornerRadius(8)
-                            .shadow(radius: 3)
-                        
-                        Text(song.0) // 歌曲标题
-                            .font(.body)
-                            .padding(.leading, 10)
-                        
-                        Spacer()
-                    }
-                    .padding(.vertical, 3)
-                }
+            
+            // 数据部分
+            HStack {
+                Text("Followers: 120")
+                    .font(.body)
+                Spacer()
+                Text("Following: 75")
+                    .font(.body)
             }
             .padding(.horizontal)
+            .padding(.bottom, 20)
 
-            Spacer() // 用于在底部留出一些空间
+            // 显示名为“heatmap-removebg-preview”的图片，并与时钟符号并排显示
+            HStack {
+                Image("heatmap-removebg-preview")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: UIScreen.main.bounds.width * 0.55)
+                    .padding(.horizontal)
+
+                VStack {
+                    Image(systemName: "clock.fill")
+                        .foregroundColor(.primary)
+                        .imageScale(.large)
+                    Text("256 hours listened last month")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+                .padding(.horizontal)
+                
+                Spacer()
+            }
+            .padding(.bottom, 20)
+
+            // 水平滑动区域
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 20) {
+                    ForEach(topSongs, id: \.0) { song in
+                        VStack {
+                            Image(song.1)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 100, height: 100)
+                                .cornerRadius(8)
+                                .shadow(radius: 3)
+                            
+                            Text(song.0)
+                                .font(.body)
+                                .padding(.top, 5)
+                        }
+                    }
+                }
+                .padding(.horizontal, 10)
+            }
+
+            Spacer()
         }
         .background(
-            Image("mm") // 背景图使用同一张 "mm" 图片
+            Image("mm")
                 .resizable()
-                .blur(radius: 10) // 应用模糊效果
+                .blur(radius: 10)
                 .overlay(Color.white.opacity(0.7))
-                .edgesIgnoringSafeArea(.all) // 让背景填充到安全区域以外
+                .edgesIgnoringSafeArea(.all)
         )
     }
 }
 
-// 预览
+// 预览部分
 struct Profile_Previews: PreviewProvider {
     static var previews: some View {
         Profile()
