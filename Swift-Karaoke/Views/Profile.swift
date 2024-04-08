@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct Profile: View {
-    let profileImage = "mm" // 头像图片名称
+    // 假设有五个不同的头像图片名称
+    let profileImages = ["mm", "mm2", "mm3", "mm4", "mm5"]
     let userName = "Student beg for A"
     let userDescription = "Karaoke enthusiast. Love to explore new songs and share with friends."
     let topSongs = [
@@ -13,15 +14,19 @@ struct Profile: View {
 
     var body: some View {
         VStack(alignment: .center) {
-            // 头像
-            Image(profileImage)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 150, height: 150)
-                .clipShape(Circle())
-                .shadow(radius: 10)
-                .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                .padding(.top, 20)
+            // 头像们，水平排列
+            HStack(spacing: -20) { // 使用负间距可以让头像之间重叠，视觉上更紧密
+                ForEach(profileImages, id: \.self) { imgName in
+                    Image(imgName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 50, height: 50) // 调整尺寸以适应水平布局
+                        .clipShape(Circle())
+                        .shadow(radius: 5)
+                        .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                }
+            }
+            .padding(.top, 20)
 
             // 用户名
             Text(userName)
@@ -36,29 +41,7 @@ struct Profile: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
                 .padding(.bottom, 20)
-
-            // 水平滑动区域
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 20) {
-                    ForEach(topSongs, id: \.0) { song in
-                        VStack {
-                            Image(song.1) // 专辑封面图片
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 100, height: 100) // 调整大小以适应水平布局
-                                .cornerRadius(8)
-                                .shadow(radius: 3)
-                            
-                            Text(song.0) // 歌曲标题
-                                .font(.body)
-                                .padding(.top, 5)
-                        }
-                    }
-                }
-                .padding(.horizontal, 10)
-            }
-            .padding(.bottom, 20)
-
+            
             // 数据部分
             HStack {
                 Text("Followers: 120")
@@ -68,15 +51,44 @@ struct Profile: View {
                     .font(.body)
             }
             .padding(.horizontal)
+            .padding(.bottom, 20)
 
-            Spacer() // 用于在底部留出一些空间
+            // 显示名为“heatmap”的图片
+            Image("heatmap")
+                .resizable()
+                .scaledToFit()
+                .padding(.horizontal)
+                .padding(.bottom, 20)
+
+            // 水平滑动区域
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 20) {
+                    ForEach(topSongs, id: \.0) { song in
+                        VStack {
+                            Image(song.1)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 100, height: 100)
+                                .cornerRadius(8)
+                                .shadow(radius: 3)
+                            
+                            Text(song.0)
+                                .font(.body)
+                                .padding(.top, 5)
+                        }
+                    }
+                }
+                .padding(.horizontal, 10)
+            }
+
+            Spacer()
         }
         .background(
-            Image("mm") // 背景图
+            Image("mm")
                 .resizable()
-                .blur(radius: 10) // 应用模糊效果
-                .overlay(Color.white.opacity(0.7)) // 叠加一层半透明的白色遮罩
-                .edgesIgnoringSafeArea(.all) // 让背景填充到安全区域以外
+                .blur(radius: 10)
+                .overlay(Color.white.opacity(0.7))
+                .edgesIgnoringSafeArea(.all)
         )
     }
 }
