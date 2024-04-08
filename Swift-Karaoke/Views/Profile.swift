@@ -37,31 +37,35 @@ struct Profile: View {
                 .padding(.horizontal)
                 .padding(.bottom, 20)
 
-            // 垂直滑动区域
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(alignment: .leading) {
-                    Text("Top Songs")
-                        .font(.headline)
-                        .padding(.bottom, 5)
-                    
+            // 水平滑动区域
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 20) {
                     ForEach(topSongs, id: \.0) { song in
-                        HStack {
+                        VStack {
                             Image(song.1) // 专辑封面图片
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 50, height: 50)
+                                .frame(width: 100, height: 100) // 调整大小以适应水平布局
                                 .cornerRadius(8)
                                 .shadow(radius: 3)
                             
                             Text(song.0) // 歌曲标题
                                 .font(.body)
-                                .padding(.leading, 10)
-                            
-                            Spacer()
+                                .padding(.top, 5)
                         }
-                        .padding(.vertical, 3)
                     }
                 }
+                .padding(.horizontal, 10)
+            }
+            .padding(.bottom, 20)
+
+            // 数据部分
+            HStack {
+                Text("Followers: 120")
+                    .font(.body)
+                Spacer()
+                Text("Following: 75")
+                    .font(.body)
             }
             .padding(.horizontal)
 
