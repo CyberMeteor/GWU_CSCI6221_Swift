@@ -1,12 +1,14 @@
 import SwiftUI
 
 struct Profile: View {
-    // 假定所有图片都使用 "mm" 这个名称
     let profileImage = "mm" // 头像图片名称
+    let userName = "Student beg for A"
+    let userDescription = "Karaoke enthusiast. Love to explore new songs and share with friends."
     let topSongs = [
-        ("Song Title 1", "mm"), // 歌曲标题和统一使用 "mm" 的专辑封面图片
+        ("Song Title 1", "mm"),
         ("Song Title 2", "mm"),
-        ("Song Title 3", "mm")
+        ("Song Title 3", "mm"),
+        // 更多歌曲...
     ]
 
     var body: some View {
@@ -22,41 +24,43 @@ struct Profile: View {
                 .padding(.top, 20)
 
             // 用户名
-            Text("Student beg for A")
+            Text(userName)
                 .font(.title)
                 .fontWeight(.bold)
                 .padding(.top, 8)
             
             // 用户描述
-            Text("Karaoke enthusiast. Love to explore new songs and share with friends.")
+            Text(userDescription)
                 .font(.body)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
                 .padding(.bottom, 20)
 
-            // 最多听歌曲的排名和专辑封面
-            VStack(alignment: .leading) {
-                Text("Top Songs")
-                    .font(.headline)
-                    .padding(.bottom, 5)
-                
-                ForEach(topSongs, id: \.0) { song in
-                    HStack {
-                        Image(song.1) // 使用同一张图片 "mm" 作为专辑封面
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 50, height: 50)
-                            .cornerRadius(8)
-                            .shadow(radius: 3)
-                        
-                        Text(song.0) // 歌曲标题
-                            .font(.body)
-                            .padding(.leading, 10)
-                        
-                        Spacer()
+            // 垂直滑动区域
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .leading) {
+                    Text("Top Songs")
+                        .font(.headline)
+                        .padding(.bottom, 5)
+                    
+                    ForEach(topSongs, id: \.0) { song in
+                        HStack {
+                            Image(song.1) // 专辑封面图片
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 50, height: 50)
+                                .cornerRadius(8)
+                                .shadow(radius: 3)
+                            
+                            Text(song.0) // 歌曲标题
+                                .font(.body)
+                                .padding(.leading, 10)
+                            
+                            Spacer()
+                        }
+                        .padding(.vertical, 3)
                     }
-                    .padding(.vertical, 3)
                 }
             }
             .padding(.horizontal)
@@ -64,10 +68,10 @@ struct Profile: View {
             Spacer() // 用于在底部留出一些空间
         }
         .background(
-            Image("mm") // 背景图使用同一张 "mm" 图片
+            Image("mm") // 背景图
                 .resizable()
                 .blur(radius: 10) // 应用模糊效果
-                .overlay(Color.white.opacity(0.7))
+                .overlay(Color.white.opacity(0.7)) // 叠加一层半透明的白色遮罩
                 .edgesIgnoringSafeArea(.all) // 让背景填充到安全区域以外
         )
     }
