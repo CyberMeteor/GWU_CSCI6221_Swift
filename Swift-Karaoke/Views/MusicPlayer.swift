@@ -48,8 +48,6 @@ struct MusicPlayer: View {
                     }
                     .frame(height: size.width - 50)
                     .padding(.vertical, size.height < 700 ? 10: 30)
-                    
-                    
                     PlayerView(size)
                     
                 }
