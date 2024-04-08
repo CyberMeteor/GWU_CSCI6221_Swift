@@ -63,7 +63,7 @@ struct Profile: View {
                 Image("heatmap-removebg-preview")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: UIScreen.main.bounds.width * 0.25)
+                    .frame(width: UIScreen.main.bounds.width * 0.55)
                     .padding(.horizontal)
 
                 VStack {
