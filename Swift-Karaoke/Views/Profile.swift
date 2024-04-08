@@ -15,18 +15,18 @@ struct Profile: View {
     var body: some View {
         VStack(alignment: .center) {
             // 头像们，水平排列
-            HStack(spacing: 15) { // 调整间距以避免重叠，并为每个图片和下方的数字提供足够空间
+            HStack(spacing: 15) {
                 ForEach(0..<profileImages.count, id: \.self) { index in
                     VStack {
                         Image(self.profileImages[index])
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 50, height: 50) // 调整尺寸以适应布局
+                            .frame(width: 50, height: 50)
                             .clipShape(Circle())
                             .shadow(radius: 5)
                             .overlay(Circle().stroke(Color.white, lineWidth: 2))
                         
-                        Text("\(index + 1)") // 在图片下方显示编号
+                        Text("\(index + 1)")
                             .font(.caption)
                     }
                 }
@@ -58,13 +58,27 @@ struct Profile: View {
             .padding(.horizontal)
             .padding(.bottom, 20)
 
-            // 显示名为“heatmap”的图片，并将其尺寸调整为原来的50%
-            Image("heatmap-removebg-preview")
-                .resizable()
-                .scaledToFit()
-                .frame(width: UIScreen.main.bounds.width * 0.5) // 使用屏幕宽度的50%作为图片宽度
+            // 显示名为“heatmap-removebg-preview”的图片，并与时钟符号并排显示
+            HStack {
+                Image("heatmap-removebg-preview")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: UIScreen.main.bounds.width * 0.25)
+                    .padding(.horizontal)
+
+                VStack {
+                    Image(systemName: "clock.fill")
+                        .foregroundColor(.primary)
+                        .imageScale(.large)
+                    Text("256 hours listened last month")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
                 .padding(.horizontal)
-                .padding(.bottom, 20)
+                
+                Spacer()
+            }
+            .padding(.bottom, 20)
 
             // 水平滑动区域
             ScrollView(.horizontal, showsIndicators: false) {
@@ -99,7 +113,7 @@ struct Profile: View {
     }
 }
 
-// 预览
+// 预览部分
 struct Profile_Previews: PreviewProvider {
     static var previews: some View {
         Profile()
