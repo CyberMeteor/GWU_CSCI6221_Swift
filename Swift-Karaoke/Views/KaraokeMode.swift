@@ -49,7 +49,7 @@ struct KaraokeMode: View {
                 ForEach(lyrics[lyricsPointer..<lyrics.count], id: \.self) { line in
                     Text(line)
                         .font(.system(size: 32, weight: .semibold))
-                        .foregroundColor(.white)
+                        .foregroundColor(line == lyrics[lyricsPointer] ? .yellow: .white)
                         .multilineTextAlignment(.leading)
                         .padding(.vertical, 5)
                 }
