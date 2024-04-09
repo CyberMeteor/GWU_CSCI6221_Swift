@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            KaraokeMode(songName: "Seasons In The Sun", artistName: "Westlife")
+            KaraokeMode(songName: "Seasons In The Sun")
                 .tabItem() {
                     Image(systemName: "music.mic")
                     Text("Karaoke")
@@ -32,13 +32,13 @@ struct ContentView: View {
                         .multilineTextAlignment(.center)
                 }
             
-            MusicLibrary()
-                .tabItem() {
-                    Image(systemName: "bookmark.circle")
-                        .foregroundColor(.red)
-                        .padding(.vertical, 6)
-                    Text("Library")
-                }
+//            MusicLibrary()
+//                .tabItem() {
+//                    Image(systemName: "bookmark.circle")
+//                        .foregroundColor(.red)
+//                        .padding(.vertical, 6)
+//                    Text("Library")
+//                }
             
             Profile()
                 .tabItem() {

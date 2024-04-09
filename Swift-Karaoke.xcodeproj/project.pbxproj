@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1972401B2BC4742F00B58C34 /* Aimer_ref_rain_filtered.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 197240182BC4742F00B58C34 /* Aimer_ref_rain_filtered.lrc */; };
+		1972401C2BC4742F00B58C34 /* Milet_japanese_only.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 197240192BC4742F00B58C34 /* Milet_japanese_only.lrc */; };
+		1972401D2BC4742F00B58C34 /* Adele_rolling_in_the_deep_english_only.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 1972401A2BC4742F00B58C34 /* Adele_rolling_in_the_deep_english_only.lrc */; };
+		1972401F2BC4743600B58C34 /* When Christmas comes to town.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 1972401E2BC4743600B58C34 /* When Christmas comes to town.lrc */; };
+		1972402B2BC4746C00B58C34 /* Adele - Rolling in the Deep (Explicit)-accompaniment-C minor-105bpm-440hz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 197240262BC4746C00B58C34 /* Adele - Rolling in the Deep (Explicit)-accompaniment-C minor-105bpm-440hz.mp3 */; };
+		1972402C2BC4746C00B58C34 /* Aimer - Ref_rain-accompaniment-G major-78bpm-441hz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 197240272BC4746C00B58C34 /* Aimer - Ref_rain-accompaniment-G major-78bpm-441hz.mp3 */; };
+		1972402D2BC4746C00B58C34 /* milet - Drown-accompaniment-A minor-90bpm-440hz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 197240282BC4746C00B58C34 /* milet - Drown-accompaniment-A minor-90bpm-440hz.mp3 */; };
+		1972402E2BC4746C00B58C34 /* Westlife - Seasons In The Sun-accompaniment-F# major-88bpm-441hz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 197240292BC4746C00B58C34 /* Westlife - Seasons In The Sun-accompaniment-F# major-88bpm-441hz.mp3 */; };
+		1972402F2BC4746C00B58C34 /* When Christmas comes to town [music].mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1972402A2BC4746C00B58C34 /* When Christmas comes to town [music].mp3 */; };
+		1972403D2BC4767A00B58C34 /* Idina Menzel_Aurora-Into the Unknown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 197240362BC4767900B58C34 /* Idina Menzel_Aurora-Into the Unknown.mp3 */; };
+		1972403E2BC4767A00B58C34 /* Ed Sheeran-Perfect.flac in Resources */ = {isa = PBXBuildFile; fileRef = 197240372BC4767900B58C34 /* Ed Sheeran-Perfect.flac */; };
+		1972403F2BC4767A00B58C34 /* When Christmas comes to town.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 197240382BC4767900B58C34 /* When Christmas comes to town.mp3 */; };
+		197240402BC4767A00B58C34 /* milet - Drown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 197240392BC4767A00B58C34 /* milet - Drown.mp3 */; };
+		197240412BC4767A00B58C34 /* Bonnie Tyler - Total Eclipse of the Heart.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1972403A2BC4767A00B58C34 /* Bonnie Tyler - Total Eclipse of the Heart.wav */; };
+		197240422BC4767A00B58C34 /* Adele - Rolling in the Deep (Explicit).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1972403B2BC4767A00B58C34 /* Adele - Rolling in the Deep (Explicit).mp3 */; };
+		197240432BC4767A00B58C34 /* Aimer - Ref_rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1972403C2BC4767A00B58C34 /* Aimer - Ref_rain.mp3 */; };
+		197240452BC4770C00B58C34 /* allSongs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197240442BC4770C00B58C34 /* allSongs.swift */; };
 		19E90FFC2BBE325A00E49E59 /* Seasons In The Sun.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 19E90FFB2BBE325A00E49E59 /* Seasons In The Sun.lrc */; };
 		19E90FFE2BBE329300E49E59 /* Seasons In The Sun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19E90FFD2BBE329300E49E59 /* Seasons In The Sun.mp3 */; };
 		875EDB3D2BBB2FD4005A82B3 /* KaraokeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875EDB3C2BBB2FD4005A82B3 /* KaraokeMode.swift */; };
@@ -42,6 +59,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		197240182BC4742F00B58C34 /* Aimer_ref_rain_filtered.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Aimer_ref_rain_filtered.lrc; path = Music_Library/Lrc/Aimer_ref_rain_filtered.lrc; sourceTree = SOURCE_ROOT; };
+		197240192BC4742F00B58C34 /* Milet_japanese_only.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Milet_japanese_only.lrc; path = Music_Library/Lrc/Milet_japanese_only.lrc; sourceTree = SOURCE_ROOT; };
+		1972401A2BC4742F00B58C34 /* Adele_rolling_in_the_deep_english_only.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Adele_rolling_in_the_deep_english_only.lrc; path = Music_Library/Lrc/Adele_rolling_in_the_deep_english_only.lrc; sourceTree = SOURCE_ROOT; };
+		1972401E2BC4743600B58C34 /* When Christmas comes to town.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "When Christmas comes to town.lrc"; path = "Music_Library/Lrc/When Christmas comes to town.lrc"; sourceTree = SOURCE_ROOT; };
+		197240262BC4746C00B58C34 /* Adele - Rolling in the Deep (Explicit)-accompaniment-C minor-105bpm-440hz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Adele - Rolling in the Deep (Explicit)-accompaniment-C minor-105bpm-440hz.mp3"; path = "Music_Library/Karaoke_Background/Adele - Rolling in the Deep (Explicit)-accompaniment-C minor-105bpm-440hz.mp3"; sourceTree = SOURCE_ROOT; };
+		197240272BC4746C00B58C34 /* Aimer - Ref_rain-accompaniment-G major-78bpm-441hz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Aimer - Ref_rain-accompaniment-G major-78bpm-441hz.mp3"; path = "Music_Library/Karaoke_Background/Aimer - Ref_rain-accompaniment-G major-78bpm-441hz.mp3"; sourceTree = SOURCE_ROOT; };
+		197240282BC4746C00B58C34 /* milet - Drown-accompaniment-A minor-90bpm-440hz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "milet - Drown-accompaniment-A minor-90bpm-440hz.mp3"; path = "Music_Library/Karaoke_Background/milet - Drown-accompaniment-A minor-90bpm-440hz.mp3"; sourceTree = SOURCE_ROOT; };
+		197240292BC4746C00B58C34 /* Westlife - Seasons In The Sun-accompaniment-F# major-88bpm-441hz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Westlife - Seasons In The Sun-accompaniment-F# major-88bpm-441hz.mp3"; path = "Music_Library/Karaoke_Background/Westlife - Seasons In The Sun-accompaniment-F# major-88bpm-441hz.mp3"; sourceTree = SOURCE_ROOT; };
+		1972402A2BC4746C00B58C34 /* When Christmas comes to town [music].mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "When Christmas comes to town [music].mp3"; path = "Music_Library/Karaoke_Background/When Christmas comes to town [music].mp3"; sourceTree = SOURCE_ROOT; };
+		197240362BC4767900B58C34 /* Idina Menzel_Aurora-Into the Unknown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Idina Menzel_Aurora-Into the Unknown.mp3"; path = "Music_Library/Songs/Idina Menzel_Aurora-Into the Unknown.mp3"; sourceTree = SOURCE_ROOT; };
+		197240372BC4767900B58C34 /* Ed Sheeran-Perfect.flac */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ed Sheeran-Perfect.flac"; path = "Music_Library/Songs/Ed Sheeran-Perfect.flac"; sourceTree = SOURCE_ROOT; };
+		197240382BC4767900B58C34 /* When Christmas comes to town.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "When Christmas comes to town.mp3"; path = "Music_Library/Songs/When Christmas comes to town.mp3"; sourceTree = SOURCE_ROOT; };
+		197240392BC4767A00B58C34 /* milet - Drown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "milet - Drown.mp3"; path = "Music_Library/Songs/milet - Drown.mp3"; sourceTree = SOURCE_ROOT; };
+		1972403A2BC4767A00B58C34 /* Bonnie Tyler - Total Eclipse of the Heart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Bonnie Tyler - Total Eclipse of the Heart.wav"; path = "Music_Library/Songs/Bonnie Tyler - Total Eclipse of the Heart.wav"; sourceTree = SOURCE_ROOT; };
+		1972403B2BC4767A00B58C34 /* Adele - Rolling in the Deep (Explicit).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Adele - Rolling in the Deep (Explicit).mp3"; path = "Music_Library/Songs/Adele - Rolling in the Deep (Explicit).mp3"; sourceTree = SOURCE_ROOT; };
+		1972403C2BC4767A00B58C34 /* Aimer - Ref_rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Aimer - Ref_rain.mp3"; path = "Music_Library/Songs/Aimer - Ref_rain.mp3"; sourceTree = SOURCE_ROOT; };
+		197240442BC4770C00B58C34 /* allSongs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = allSongs.swift; sourceTree = "<group>"; };
 		19E90FFB2BBE325A00E49E59 /* Seasons In The Sun.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Seasons In The Sun.lrc"; sourceTree = "<group>"; };
 		19E90FFD2BBE329300E49E59 /* Seasons In The Sun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Seasons In The Sun.mp3"; sourceTree = "<group>"; };
 		875EDB3C2BBB2FD4005A82B3 /* KaraokeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaraokeMode.swift; sourceTree = "<group>"; };
@@ -87,12 +121,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19E208632BC472A50040EDA7 /* Songs */ = {
+			isa = PBXGroup;
+			children = (
+				1972403B2BC4767A00B58C34 /* Adele - Rolling in the Deep (Explicit).mp3 */,
+				1972403C2BC4767A00B58C34 /* Aimer - Ref_rain.mp3 */,
+				1972403A2BC4767A00B58C34 /* Bonnie Tyler - Total Eclipse of the Heart.wav */,
+				197240372BC4767900B58C34 /* Ed Sheeran-Perfect.flac */,
+				197240362BC4767900B58C34 /* Idina Menzel_Aurora-Into the Unknown.mp3 */,
+				197240392BC4767A00B58C34 /* milet - Drown.mp3 */,
+				197240382BC4767900B58C34 /* When Christmas comes to town.mp3 */,
+				19E90FFD2BBE329300E49E59 /* Seasons In The Sun.mp3 */,
+				87B3C35C2BB1C99F002D13EC /* Tuesday.mp3 */,
+			);
+			path = Songs;
+			sourceTree = "<group>";
+		};
+		19E208642BC472A90040EDA7 /* Songs-Karaoke */ = {
+			isa = PBXGroup;
+			children = (
+				197240262BC4746C00B58C34 /* Adele - Rolling in the Deep (Explicit)-accompaniment-C minor-105bpm-440hz.mp3 */,
+				197240272BC4746C00B58C34 /* Aimer - Ref_rain-accompaniment-G major-78bpm-441hz.mp3 */,
+				197240282BC4746C00B58C34 /* milet - Drown-accompaniment-A minor-90bpm-440hz.mp3 */,
+				197240292BC4746C00B58C34 /* Westlife - Seasons In The Sun-accompaniment-F# major-88bpm-441hz.mp3 */,
+				1972402A2BC4746C00B58C34 /* When Christmas comes to town [music].mp3 */,
+			);
+			path = "Songs-Karaoke";
+			sourceTree = "<group>";
+		};
+		19E208652BC472AB0040EDA7 /* Lyrics */ = {
+			isa = PBXGroup;
+			children = (
+				1972401E2BC4743600B58C34 /* When Christmas comes to town.lrc */,
+				1972401A2BC4742F00B58C34 /* Adele_rolling_in_the_deep_english_only.lrc */,
+				197240182BC4742F00B58C34 /* Aimer_ref_rain_filtered.lrc */,
+				197240192BC4742F00B58C34 /* Milet_japanese_only.lrc */,
+				19E90FFB2BBE325A00E49E59 /* Seasons In The Sun.lrc */,
+			);
+			path = Lyrics;
+			sourceTree = "<group>";
+		};
 		19E90FE82BBCF4F600E49E59 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				19E90FFB2BBE325A00E49E59 /* Seasons In The Sun.lrc */,
-				19E90FFD2BBE329300E49E59 /* Seasons In The Sun.mp3 */,
-				87B3C35C2BB1C99F002D13EC /* Tuesday.mp3 */,
+				19E208652BC472AB0040EDA7 /* Lyrics */,
+				19E208642BC472A90040EDA7 /* Songs-Karaoke */,
+				19E208632BC472A50040EDA7 /* Songs */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -132,6 +206,7 @@
 		F2B1E44C2BAB83A10000DEB4 /* Swift-Karaoke */ = {
 			isa = PBXGroup;
 			children = (
+				197240442BC4770C00B58C34 /* allSongs.swift */,
 				875EDB3B2BBB2F9D005A82B3 /* Views */,
 				F2B1E44D2BAB83A10000DEB4 /* Swift_KaraokeApp.swift */,
 				F2B1E44F2BAB83A10000DEB4 /* ContentView.swift */,
@@ -271,11 +346,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1972403E2BC4767A00B58C34 /* Ed Sheeran-Perfect.flac in Resources */,
+				197240412BC4767A00B58C34 /* Bonnie Tyler - Total Eclipse of the Heart.wav in Resources */,
+				1972403F2BC4767A00B58C34 /* When Christmas comes to town.mp3 in Resources */,
 				87B3C35D2BB1C99F002D13EC /* Tuesday.mp3 in Resources */,
+				1972401B2BC4742F00B58C34 /* Aimer_ref_rain_filtered.lrc in Resources */,
+				1972401C2BC4742F00B58C34 /* Milet_japanese_only.lrc in Resources */,
+				197240402BC4767A00B58C34 /* milet - Drown.mp3 in Resources */,
 				19E90FFE2BBE329300E49E59 /* Seasons In The Sun.mp3 in Resources */,
+				1972401F2BC4743600B58C34 /* When Christmas comes to town.lrc in Resources */,
 				F2B1E4552BAB83A30000DEB4 /* Preview Assets.xcassets in Resources */,
+				1972403D2BC4767A00B58C34 /* Idina Menzel_Aurora-Into the Unknown.mp3 in Resources */,
+				197240432BC4767A00B58C34 /* Aimer - Ref_rain.mp3 in Resources */,
 				F2B1E4522BAB83A30000DEB4 /* Assets.xcassets in Resources */,
+				197240422BC4767A00B58C34 /* Adele - Rolling in the Deep (Explicit).mp3 in Resources */,
 				19E90FFC2BBE325A00E49E59 /* Seasons In The Sun.lrc in Resources */,
+				1972402F2BC4746C00B58C34 /* When Christmas comes to town [music].mp3 in Resources */,
+				1972402B2BC4746C00B58C34 /* Adele - Rolling in the Deep (Explicit)-accompaniment-C minor-105bpm-440hz.mp3 in Resources */,
+				1972402E2BC4746C00B58C34 /* Westlife - Seasons In The Sun-accompaniment-F# major-88bpm-441hz.mp3 in Resources */,
+				1972401D2BC4742F00B58C34 /* Adele_rolling_in_the_deep_english_only.lrc in Resources */,
+				1972402D2BC4746C00B58C34 /* milet - Drown-accompaniment-A minor-90bpm-440hz.mp3 in Resources */,
+				1972402C2BC4746C00B58C34 /* Aimer - Ref_rain-accompaniment-G major-78bpm-441hz.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +394,7 @@
 				875EDB3F2BBB2FEE005A82B3 /* ListenTogether.swift in Sources */,
 				F2B1E4502BAB83A10000DEB4 /* ContentView.swift in Sources */,
 				875EDB432BBB302D005A82B3 /* MusicPlayer.swift in Sources */,
+				197240452BC4770C00B58C34 /* allSongs.swift in Sources */,
 				875EDB452BBB3047005A82B3 /* Profile.swift in Sources */,
 				F2B1E44E2BAB83A10000DEB4 /* Swift_KaraokeApp.swift in Sources */,
 				875EDB412BBB301A005A82B3 /* MusicLibrary.swift in Sources */,
