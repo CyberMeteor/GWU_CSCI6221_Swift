@@ -10,7 +10,7 @@ import AVKit
 import MediaPlayer
 
 struct MusicPlayer: View {
-    let audioFileName = "Tuesday"
+    
     
     @State private var player: AVAudioPlayer?
     
@@ -26,6 +26,8 @@ struct MusicPlayer: View {
     var animation: Namespace.ID
     @State private var animationContenet: Bool = false
     
+    @EnvironmentObject var songManager: SongManager
+    
     var body: some View {
         GeometryReader {
             let size = $0.size
@@ -36,16 +38,17 @@ struct MusicPlayer: View {
                     .fill(.ultraThickMaterial)
                     .overlay(content: {
                         Rectangle()
-                        Image("mm")
+                            .fill(Color.gray)
+                        Image("\(songManager.song.cover)")
                             .blur(radius: 55)
-                        // .opacity(animation ? 1.0)
+                            .opacity(0.8)
                     })
                 // .matchedGeometryEffect(id: "BGVIEW", in: animation)
                 
                 VStack(spacing: 15){
                     GeometryReader{
                         let size = $0.size
-                        Image("mm")
+                        Image("\(songManager.song.cover)")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: size.width, height: size.height)
@@ -73,7 +76,7 @@ struct MusicPlayer: View {
     }
     
     private func setupAudio() {
-        guard let url = Bundle.main.url(forResource: audioFileName, withExtension: "mp3")
+        guard let url = Bundle.main.url(forResource: songManager.song.audio_url, withExtension: songManager.song.exten)
         else{
             return
         }
@@ -168,12 +171,12 @@ struct MusicPlayer: View {
                 VStack(spacing: spacing) {
                     HStack(alignment: .center, spacing: 15){
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("Tuesday Night")
+                            Text("\(songManager.song.title)")
                                 .font(.title3)
                                 .fontWeight(.semibold)
                                 .foregroundStyle(.white)
                             
-                            Text("Tony's Relaxation")
+                            Text("\(songManager.song.artist)")
                                 .foregroundStyle(.gray)
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)

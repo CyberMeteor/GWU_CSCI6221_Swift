@@ -9,28 +9,39 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var songManager = SongManager()
+    
     var body: some View {
         TabView {
             KaraokeMode(songName: "Perfect")
                 .tabItem() {
-                    Image(systemName: "music.mic")
+                    Image(systemName: "music.mic.circle.fill")
                     Text("Karaoke")
                 }
             
-            ListenTogether()
+//            ListenTogether()
+//                .tabItem() {
+//                    Image(systemName: "person.3.fill")
+//                    Text("Share")
+//                }
+            
+            NewLibrary()
+                .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
                 .tabItem() {
-                    Image(systemName: "person.3.fill")
-                    Text("Share")
+                    Image(systemName: "bookmark.circle")
+                    Text("Library")
                 }
+                .environmentObject(songManager)
+
+                
             
             MusicPlayer(expandSheet: .constant(true), animation: Namespace().wrappedValue)
                 .tabItem() {
-                        Image(systemName: "play.circle")
-                            .foregroundColor(.red)
-                            .padding(.vertical, 6)
+                    Image(systemName: "play.circle")
                     Text("Listening")
-                        .multilineTextAlignment(.center)
                 }
+                .environmentObject(songManager)
             
 //            MusicLibrary()
 //                .tabItem() {
@@ -39,6 +50,13 @@ struct ContentView: View {
 //                        .padding(.vertical, 6)
 //                    Text("Library")
 //                }
+            
+            Search()
+                .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+                .tabItem() {
+                    Image(systemName: "magnifyingglass.circle.fill")
+                    Text("Search")
+                }
             
             Profile()
                 .tabItem() {
