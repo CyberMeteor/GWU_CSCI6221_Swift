@@ -104,10 +104,10 @@ struct Profile: View {
             Spacer()
         }
         .background(
-            Image("mm")
+            Image("wallpapers")
                 .resizable()
-                .blur(radius: 10)
-                .overlay(Color.white.opacity(0.7))
+                .blur(radius: 20)
+                .overlay(Color.white.opacity(0.85))
                 .edgesIgnoringSafeArea(.all)
         )
     }
