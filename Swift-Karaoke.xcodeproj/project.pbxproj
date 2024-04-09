@@ -12,10 +12,20 @@
 		875EDB412BBB301A005A82B3 /* MusicLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875EDB402BBB301A005A82B3 /* MusicLibrary.swift */; };
 		875EDB432BBB302D005A82B3 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875EDB422BBB302D005A82B3 /* MusicPlayer.swift */; };
 		875EDB452BBB3047005A82B3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875EDB442BBB3047005A82B3 /* Profile.swift */; };
-		87B3C35D2BB1C99F002D13EC /* Tuesday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 87B3C35C2BB1C99F002D13EC /* Tuesday.mp3 */; };
+		B8DDF6842BC4DA3000C32214 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8DDF6832BC4DA3000C32214 /* Assets.xcassets */; };
+		B8DDF6902BC4DAAE00C32214 /* Aimer_ref_rain_filtered.lrc in Resources */ = {isa = PBXBuildFile; fileRef = B8DDF6862BC4DAAD00C32214 /* Aimer_ref_rain_filtered.lrc */; };
+		B8DDF6912BC4DAAE00C32214 /* Adele_rolling_in_the_deep_english_only.lrc in Resources */ = {isa = PBXBuildFile; fileRef = B8DDF6872BC4DAAD00C32214 /* Adele_rolling_in_the_deep_english_only.lrc */; };
+		B8DDF6922BC4DAAE00C32214 /* Drown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8DDF6882BC4DAAD00C32214 /* Drown.mp3 */; };
+		B8DDF6932BC4DAAE00C32214 /* Ref_rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8DDF6892BC4DAAE00C32214 /* Ref_rain.mp3 */; };
+		B8DDF6942BC4DAAE00C32214 /* Milet_japanese_only.lrc in Resources */ = {isa = PBXBuildFile; fileRef = B8DDF68A2BC4DAAE00C32214 /* Milet_japanese_only.lrc */; };
+		B8DDF6952BC4DAAE00C32214 /* Rolling in the Deep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8DDF68B2BC4DAAE00C32214 /* Rolling in the Deep.mp3 */; };
+		B8DDF6962BC4DAAE00C32214 /* Seasons In The Sun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8DDF68C2BC4DAAE00C32214 /* Seasons In The Sun.mp3 */; };
+		B8DDF6972BC4DAAE00C32214 /* When Christmas comes to town.lrc in Resources */ = {isa = PBXBuildFile; fileRef = B8DDF68D2BC4DAAE00C32214 /* When Christmas comes to town.lrc */; };
+		B8DDF6982BC4DAAE00C32214 /* When Christmas comes to town.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8DDF68E2BC4DAAE00C32214 /* When Christmas comes to town.mp3 */; };
+		B8DDF6992BC4DAAE00C32214 /* season_in_the_sun_english_only.lrc in Resources */ = {isa = PBXBuildFile; fileRef = B8DDF68F2BC4DAAE00C32214 /* season_in_the_sun_english_only.lrc */; };
+		B8DDF69B2BC4EAC100C32214 /* Tuesday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8DDF69A2BC4EAC100C32214 /* Tuesday.mp3 */; };
 		F2B1E44E2BAB83A10000DEB4 /* Swift_KaraokeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B1E44D2BAB83A10000DEB4 /* Swift_KaraokeApp.swift */; };
 		F2B1E4502BAB83A10000DEB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B1E44F2BAB83A10000DEB4 /* ContentView.swift */; };
-		F2B1E4522BAB83A30000DEB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B1E4512BAB83A30000DEB4 /* Assets.xcassets */; };
 		F2B1E4552BAB83A30000DEB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B1E4542BAB83A30000DEB4 /* Preview Assets.xcassets */; };
 		F2B1E45F2BAB83A40000DEB4 /* Swift_KaraokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B1E45E2BAB83A40000DEB4 /* Swift_KaraokeTests.swift */; };
 		F2B1E4692BAB83A40000DEB4 /* Swift_KaraokeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B1E4682BAB83A40000DEB4 /* Swift_KaraokeUITests.swift */; };
@@ -45,11 +55,21 @@
 		875EDB402BBB301A005A82B3 /* MusicLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLibrary.swift; sourceTree = "<group>"; };
 		875EDB422BBB302D005A82B3 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		875EDB442BBB3047005A82B3 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		87B3C35C2BB1C99F002D13EC /* Tuesday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Tuesday.mp3; sourceTree = "<group>"; };
+		B8DDF6832BC4DA3000C32214 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B8DDF6862BC4DAAD00C32214 /* Aimer_ref_rain_filtered.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Aimer_ref_rain_filtered.lrc; sourceTree = "<group>"; };
+		B8DDF6872BC4DAAD00C32214 /* Adele_rolling_in_the_deep_english_only.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Adele_rolling_in_the_deep_english_only.lrc; sourceTree = "<group>"; };
+		B8DDF6882BC4DAAD00C32214 /* Drown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Drown.mp3; sourceTree = "<group>"; };
+		B8DDF6892BC4DAAE00C32214 /* Ref_rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ref_rain.mp3; sourceTree = "<group>"; };
+		B8DDF68A2BC4DAAE00C32214 /* Milet_japanese_only.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Milet_japanese_only.lrc; sourceTree = "<group>"; };
+		B8DDF68B2BC4DAAE00C32214 /* Rolling in the Deep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Rolling in the Deep.mp3"; sourceTree = "<group>"; };
+		B8DDF68C2BC4DAAE00C32214 /* Seasons In The Sun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Seasons In The Sun.mp3"; sourceTree = "<group>"; };
+		B8DDF68D2BC4DAAE00C32214 /* When Christmas comes to town.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "When Christmas comes to town.lrc"; sourceTree = "<group>"; };
+		B8DDF68E2BC4DAAE00C32214 /* When Christmas comes to town.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "When Christmas comes to town.mp3"; sourceTree = "<group>"; };
+		B8DDF68F2BC4DAAE00C32214 /* season_in_the_sun_english_only.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = season_in_the_sun_english_only.lrc; sourceTree = "<group>"; };
+		B8DDF69A2BC4EAC100C32214 /* Tuesday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Tuesday.mp3; sourceTree = "<group>"; };
 		F2B1E44A2BAB83A10000DEB4 /* Swift-Karaoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Karaoke.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B1E44D2BAB83A10000DEB4 /* Swift_KaraokeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_KaraokeApp.swift; sourceTree = "<group>"; };
 		F2B1E44F2BAB83A10000DEB4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F2B1E4512BAB83A30000DEB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2B1E4542BAB83A30000DEB4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F2B1E45A2BAB83A40000DEB4 /* Swift-KaraokeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-KaraokeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B1E45E2BAB83A40000DEB4 /* Swift_KaraokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_KaraokeTests.swift; sourceTree = "<group>"; };
@@ -95,6 +115,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B8DDF6852BC4DA8900C32214 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				B8DDF69A2BC4EAC100C32214 /* Tuesday.mp3 */,
+				B8DDF6872BC4DAAD00C32214 /* Adele_rolling_in_the_deep_english_only.lrc */,
+				B8DDF6862BC4DAAD00C32214 /* Aimer_ref_rain_filtered.lrc */,
+				B8DDF6882BC4DAAD00C32214 /* Drown.mp3 */,
+				B8DDF68A2BC4DAAE00C32214 /* Milet_japanese_only.lrc */,
+				B8DDF6892BC4DAAE00C32214 /* Ref_rain.mp3 */,
+				B8DDF68B2BC4DAAE00C32214 /* Rolling in the Deep.mp3 */,
+				B8DDF68F2BC4DAAE00C32214 /* season_in_the_sun_english_only.lrc */,
+				B8DDF68C2BC4DAAE00C32214 /* Seasons In The Sun.mp3 */,
+				B8DDF68D2BC4DAAE00C32214 /* When Christmas comes to town.lrc */,
+				B8DDF68E2BC4DAAE00C32214 /* When Christmas comes to town.mp3 */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		F2B1E4412BAB83A10000DEB4 = {
 			isa = PBXGroup;
 			children = (
@@ -118,11 +156,11 @@
 		F2B1E44C2BAB83A10000DEB4 /* Swift-Karaoke */ = {
 			isa = PBXGroup;
 			children = (
+				B8DDF6852BC4DA8900C32214 /* Resource */,
 				875EDB3B2BBB2F9D005A82B3 /* Views */,
 				F2B1E44D2BAB83A10000DEB4 /* Swift_KaraokeApp.swift */,
 				F2B1E44F2BAB83A10000DEB4 /* ContentView.swift */,
-				87B3C35C2BB1C99F002D13EC /* Tuesday.mp3 */,
-				F2B1E4512BAB83A30000DEB4 /* Assets.xcassets */,
+				B8DDF6832BC4DA3000C32214 /* Assets.xcassets */,
 				F2B1E4532BAB83A30000DEB4 /* Preview Content */,
 			);
 			path = "Swift-Karaoke";
@@ -217,7 +255,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					F2B1E4492BAB83A10000DEB4 = {
 						CreatedOnToolsVersion = 14.2;
@@ -257,9 +295,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87B3C35D2BB1C99F002D13EC /* Tuesday.mp3 in Resources */,
+				B8DDF6952BC4DAAE00C32214 /* Rolling in the Deep.mp3 in Resources */,
+				B8DDF6962BC4DAAE00C32214 /* Seasons In The Sun.mp3 in Resources */,
+				B8DDF6842BC4DA3000C32214 /* Assets.xcassets in Resources */,
+				B8DDF6902BC4DAAE00C32214 /* Aimer_ref_rain_filtered.lrc in Resources */,
+				B8DDF6982BC4DAAE00C32214 /* When Christmas comes to town.mp3 in Resources */,
+				B8DDF6972BC4DAAE00C32214 /* When Christmas comes to town.lrc in Resources */,
+				B8DDF6942BC4DAAE00C32214 /* Milet_japanese_only.lrc in Resources */,
+				B8DDF6992BC4DAAE00C32214 /* season_in_the_sun_english_only.lrc in Resources */,
 				F2B1E4552BAB83A30000DEB4 /* Preview Assets.xcassets in Resources */,
-				F2B1E4522BAB83A30000DEB4 /* Assets.xcassets in Resources */,
+				B8DDF69B2BC4EAC100C32214 /* Tuesday.mp3 in Resources */,
+				B8DDF6912BC4DAAE00C32214 /* Adele_rolling_in_the_deep_english_only.lrc in Resources */,
+				B8DDF6932BC4DAAE00C32214 /* Ref_rain.mp3 in Resources */,
+				B8DDF6922BC4DAAE00C32214 /* Drown.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +411,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -423,6 +472,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

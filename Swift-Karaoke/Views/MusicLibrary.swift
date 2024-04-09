@@ -6,20 +6,54 @@
 //
 
 import SwiftUI
+import Foundation
 
-struct Song: Hashable {
-    var name: String
-    var artist: String
+class Song {
+    var audioFileName: String
+    var authors: [String]
+    var lyricPath: String
+    var karaokePath: String
+    var year: String
+    var genre: String
+    var playedTimes: Int
+    var album: String
+    var rating: Int
     var image: String
-    var audioFilename: String
-    var time: String
+
+    init(audioFileName: String, authors: [String] = [], lyricPath: String = "", karaokePath: String = "", year: String, genre: String = "Unknown", playedTimes: Int = 0, album: String = "Unknown", rating: Int = 0, image: String) {
+        self.audioFileName = audioFileName
+        self.authors = authors
+        self.lyricPath = lyricPath
+        self.karaokePath = karaokePath
+        self.year = year
+        self.genre = genre
+        self.playedTimes = playedTimes
+        self.album = album
+        self.rating = rating
+        self.image = image
+    }
+}
+
+class SongLibrary {
+    static let shared = SongLibrary()
+    var songs: [Song] = [Song(audioFileName: "Ref_rain", authors: ["Aimer"], lyricPath: "Aimer_ref_rain_filtered", year: "2018", genre: "rock", album: "Sun Dance & Penny Rain", image: "aimer_ref_rain"),
+                         
+                         Song(audioFileName: "Drown", authors: ["Milet"], lyricPath: "Milet_japanese_only", year: "2019", genre: "country", album: "Inside You", image: "milet_drown"),
+                         
+                         Song(audioFileName: "Tuesday", authors: ["Tony's Relaxation"], lyricPath: "", year: "", genre: "", album: "", image: "mm"),
+                         
+                         Song(audioFileName: "Seasons In The Sun", authors: ["Westlife"], lyricPath: "season_in_the_sun_english_only", year: "1999", genre: "pop", album: "Westlife", image: "westlift_season in the sun"),
+                         
+                         Song(audioFileName: "When Christmas comes to town", authors: ["Hanks"], lyricPath: "When Christmas comes to town", year: "2004", genre: "pop", album: "The Polar Express: Original Motion Picture Soundtrack", image: "when christmas comes to town"),
+                         
+                         Song(audioFileName: "Rolling in the Deep", authors: ["Adele"], lyricPath: "Adele_rolling_in_the_deep_english_only", year: "2011", genre: "pop", album: "21", image: "adele_rolling in the deep")]
 }
 
 struct MusicLibrary: View {
-    var songs = [Song(name: "song 1", artist: "artist 1", image: "mm", audioFilename: "Tuesday", time: "2:36"),
-                 Song(name: "song 2", artist: "artist 2", image: "1", audioFilename: "Tuesday", time: "2:36"),
-                 Song(name: "song 3", artist: "artist 3", image: "2", audioFilename: "Tuesday", time: "2:36"),
-                 Song(name: "song 4", artist: "artist 4", image: "1", audioFilename: "Tuesday", time: "2:36")]
+    var songLibrary = SongLibrary.shared.songs
+    
+    let maxCapacity: Int = 8
+    
     
     // 控制'MusicPlayer()'视图展开
     @Binding var expandSheet: Bool
@@ -29,49 +63,38 @@ struct MusicLibrary: View {
     // 进行视图转换时，指定相同的命名空间创建过渡动画
     var animation: Namespace.ID
     
+    // MARK: -popup sheet var
     // 点'play'按钮后，'currentSong'接收对应的'Song'的实例 （253行）
-    @State private var currentSong: Song?
+    @State var currentSong: Song?
     
     // 点'play'按钮后，更新'showMusicPlayer'的值为'true' （254行）
     // 'showMusicPlayer'被赋值给 'expandSheet'; 'expandSheet'作为参数传递给 'MusicPlayer()' （211行）
-    @State private var showMusicPlayer = false
+    @State var showMusicPlayer = false
     
     var body: some View {
         VStack {
             ScrollView {
                 Text("Good Morning, Le")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading)
+                    .font(.title).fontWeight(.bold).frame(maxWidth: .infinity, alignment:.leading).padding(.leading)
                 
                 VStack {
                     // MARK: -Recent Played
                     Text("Recent Played")
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal)
-                        .padding(.top, 5)
+                        .font(.title2).fontWeight(.semibold).frame(maxWidth: .infinity, alignment: .leading).padding(.horizontal).padding(.top, 5)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 17)  {
                             // 'ForEach' 遍历 'songs' 列表中的元素('Song'实例)，
-                            // 为每个'Song'实例 生成一个 'RecentPlayed()' 视图 (218行)
-                            ForEach(self.songs, id: \.self) { song in
-                                RecentPlayed(song: song, currentSong: $currentSong, showMusicPlayer: $showMusicPlayer)
+                            // 为每个'Song'实例 生成一个 'RecentPlayedSong()' 视图 (218行)
+                            ForEach(songLibrary, id: \.audioFileName) { song in
+                                RecentPlayedSong(song: song, currentSong: $currentSong, showMusicPlayer: $showMusicPlayer)
                             }
-                        }
-                        .padding([.horizontal, .bottom])
+                        }.padding([.horizontal, .bottom])
                     }
                 }
                 // MARK: -Play by Genres
                 Text("Play by Genres")
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
-                    .padding(.top, 15)
+                    .font(.title2).fontWeight(.semibold).frame(maxWidth: .infinity, alignment: .leading).padding(.horizontal).padding(.top, 15)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 17) {
@@ -80,11 +103,7 @@ struct MusicLibrary: View {
                                 // to rock playlist
                             } label: {
                                 Image("rock")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 130, height: 130)
-                                    .clipped()
-                                    .cornerRadius(15)
+                                    .resizable().aspectRatio(contentMode: .fill).frame(width: 130, height: 130).clipped().cornerRadius(15)
                             }
                             Text("Rock")
                                 .font(.subheadline)
@@ -95,11 +114,7 @@ struct MusicLibrary: View {
                                 // to country playlist
                             } label: {
                                 Image("country")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 130, height: 130)
-                                    .clipped()
-                                    .cornerRadius(15)
+                                    .resizable().aspectRatio(contentMode: .fill).frame(width: 130, height: 130).clipped().cornerRadius(15)
                             }
                             Text("Country")
                                 .font(.subheadline)
@@ -110,24 +125,16 @@ struct MusicLibrary: View {
                                 // to pop playlist
                             } label: {
                                 Image("pop")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 130, height: 130)
-                                    .clipped()
-                                    .cornerRadius(15)
+                                    .resizable().aspectRatio(contentMode: .fill).frame(width: 130, height: 130).clipped().cornerRadius(15)
                             }
                             Text("Pop")
                                 .font(.subheadline)
                         }
-                    }
-                    .padding([.horizontal, .bottom])
+                    }.padding([.horizontal, .bottom])
                 }
                 // MARK: -Play by Artists
                 Text("Play by Artists")
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .font(.title2).fontWeight(.semibold).frame(maxWidth: .infinity, alignment: .leading).padding(.horizontal)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 17) {
@@ -136,11 +143,7 @@ struct MusicLibrary: View {
                                 
                             } label: {
                                 Image("rock")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 130, height: 130)
-                                    .clipped()
-                                    .cornerRadius(15)
+                                    .resizable().aspectRatio(contentMode: .fill).frame(width: 130, height: 130).clipped().cornerRadius(15)
                             }
                             Text("name 1")
                                 .font(.subheadline)
@@ -151,11 +154,7 @@ struct MusicLibrary: View {
                                 
                             } label: {
                                 Image("country")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 130, height: 130)
-                                    .clipped()
-                                    .cornerRadius(15)
+                                    .resizable().aspectRatio(contentMode: .fill).frame(width: 130, height: 130).clipped().cornerRadius(15)
                             }
                             Text("name 2")
                                 .font(.subheadline)
@@ -166,24 +165,16 @@ struct MusicLibrary: View {
                                 
                             } label: {
                                 Image("pop")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 130, height: 130)
-                                    .clipped()
-                                    .cornerRadius(15)
+                                    .resizable().aspectRatio(contentMode: .fill).frame(width: 130, height: 130).clipped().cornerRadius(15)
                             }
                             Text("name 3")
                                 .font(.subheadline)
                         }
-                    }
-                    .padding([.horizontal, .bottom])
+                    }.padding([.horizontal, .bottom])
                 }
                 // MARK: -Play by Albums
                 Text("Play by Albums")
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .font(.title2).fontWeight(.semibold).frame(maxWidth: .infinity, alignment: .leading).padding(.horizontal)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 17) {
@@ -205,18 +196,17 @@ struct MusicLibrary: View {
         }
         // 从底部弹出'MusicPlayer()'视图
         .sheet(isPresented: $showMusicPlayer) {
-            if let currentSong = currentSong {
                 // '.wrappedValue' 用于从 'Namespace()' 实例中获取其包装的值，即'Namespace.ID'
                 // 'Namespace.ID' 传递给 'MusicPlayer()' 实现视图到另一视图的过渡
-                MusicPlayer(expandSheet: $showMusicPlayer, animation: Namespace().wrappedValue)
-            }
+                MusicPlayer(currentSong: currentSong, expandSheet: $showMusicPlayer, animation: Namespace().wrappedValue)
         }
     }
+    
+    
 }
 
 
-struct RecentPlayed: View {
-    // 'Song'类型的变量
+struct RecentPlayedSong: View {
     var song: Song
     @Binding var currentSong: Song?
     @Binding var showMusicPlayer: Bool
@@ -224,9 +214,7 @@ struct RecentPlayed: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             Image(song.image)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 150, height: 180, alignment: .center)
+                .resizable().aspectRatio(contentMode: .fill).frame(width: 150, height: 180, alignment: .center)
             
             ZStack {
                 Rectangle()
@@ -234,12 +222,12 @@ struct RecentPlayed: View {
                     .overlay {
                         HStack(alignment: .center) {
                             VStack(alignment: .leading) {
-                                Text(song.name)
+                                Text(song.audioFileName)
                                     .font(.caption)
                                     .fontWeight(.bold)
                                     .foregroundStyle(.white)
                                 
-                                Text(song.artist)
+                                Text(song.authors[0])
                                     .font(.caption2)
                                     .foregroundStyle(.white)
                             }
@@ -249,7 +237,7 @@ struct RecentPlayed: View {
                             Spacer()
                             
                             Button {
-                                // Executes when pressing 'play'
+                                print("Playing: \(song.audioFileName)")
                                 currentSong = song
                                 showMusicPlayer = true
                             } label: {
@@ -261,11 +249,8 @@ struct RecentPlayed: View {
                             .padding(5)
                         }
                     }
-            }
-            .frame(height: 50, alignment: .center)
-        }
-        .clipped()
-        .cornerRadius(15)
+            }.frame(height: 50, alignment: .center)
+        }.clipped().cornerRadius(15)
     }
 }
 

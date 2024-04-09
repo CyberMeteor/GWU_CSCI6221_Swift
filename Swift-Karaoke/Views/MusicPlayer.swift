@@ -1,21 +1,19 @@
-//
-//  MusicPlayer.swift
-//  Swift-Karaoke
-//
-//  Created by Ruiyang Chen on 2024/4/1.
-//
-
 import SwiftUI
 import AVKit
+import MediaPlayer
 
 struct MusicPlayer: View {
-    let audioFileName = "Tuesday"
+    var currentSong: Song?
     
     @State private var player: AVAudioPlayer?
     
     @State private var isPlaying = false
     @State private var totalTime: TimeInterval = 0.0
     @State private var currentTime: TimeInterval = 0.0
+    @State private var volume: Double = 0
+    @State private var volumeRange: ClosedRange<Double> = 0...100
+    @State private var volumeStep: Double = 2.0
+    @State private var volumeHasChanged: Bool = false
     
     @Binding var expandSheet: Bool
     var animation: Namespace.ID
@@ -30,17 +28,17 @@ struct MusicPlayer: View {
                 Rectangle()
                     .fill(.ultraThickMaterial)
                     .overlay(content: {
-                    Rectangle()
-                        Image("mm")
+                        Rectangle()
+                        Image(currentSong?.image ?? "mm")
                             .blur(radius: 55)
-                            // .opacity(animation ? 1.0)
+                        // .opacity(animation ? 1.0)
                     })
-                    // .matchedGeometryEffect(id: "BGVIEW", in: animation)
+                // .matchedGeometryEffect(id: "BGVIEW", in: animation)
                 
                 VStack(spacing: 15){
                     GeometryReader{
                         let size = $0.size
-                        Image("mm")
+                        Image(currentSong?.image ?? "mm")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: size.width, height: size.height)
@@ -48,8 +46,6 @@ struct MusicPlayer: View {
                     }
                     .frame(height: size.width - 50)
                     .padding(.vertical, size.height < 700 ? 10: 30)
-                    
-                    
                     PlayerView(size)
                     
                 }
@@ -70,7 +66,7 @@ struct MusicPlayer: View {
     }
     
     private func setupAudio() {
-        guard let url = Bundle.main.url(forResource: audioFileName, withExtension: "mp3")
+        guard let url = Bundle.main.url(forResource: currentSong?.audioFileName, withExtension: "mp3")
         else{
             return
         }
@@ -82,6 +78,14 @@ struct MusicPlayer: View {
             print("Error loading audio: \(error)")
         }
     }
+    
+//    private func AutoPlay() {
+//        if expandSheet == true {
+//            playAudio()
+//        } else {
+//            return
+//        }
+//    }
     
     private func playAudio() {
         player?.play()
@@ -108,6 +112,53 @@ struct MusicPlayer: View {
         return String(format: "%02d:%02d", minute, seconds)
     }
     
+    private func increaseVolume() {
+        guard volume < volumeRange.upperBound else { return }
+        volume += volumeStep
+        //        setSystemVolume(volume)
+    }
+    
+    private func decreaseVolume() {
+        guard volume > volumeRange.lowerBound else { return }
+        volume -= volumeStep
+        //        setSystemVolume(volume)
+    }
+    
+    var increaseVolumeBtn: some View {
+        Button {
+            withAnimation {
+                increaseVolume()
+            }
+        } label: {
+            Image(systemName: "speaker.wave.3.fill")
+                .tint(.white)
+        }
+        .opacity(volumeHasChanged ? 0.5 : 1)
+        .disabled(volumeHasChanged)
+    }
+    
+    var decreaseVolumeBtn: some View {
+        Button {
+            withAnimation {
+                decreaseVolume()
+            }
+        } label: {
+            Image(systemName: "speaker.fill")
+                .tint(.white)
+        }
+        .opacity(volumeHasChanged ? 0.5 : 1)
+        .disabled(volumeHasChanged)
+    }
+    
+    private func setSystemVolume(_ value: Float) {
+        let volumeView = MPVolumeView()
+        if let view = volumeView.subviews.first as? UISlider {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                view.value = value
+            }
+        }
+    }
+    
     @ViewBuilder
     func PlayerView(_ mainSize: CGSize) -> some View {
         GeometryReader {
@@ -118,12 +169,12 @@ struct MusicPlayer: View {
                 VStack(spacing: spacing) {
                     HStack(alignment: .center, spacing: 15){
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("Tuesday Night")
+                            Text(currentSong?.audioFileName ?? "Tuesday Night")
                                 .font(.title3)
                                 .fontWeight(.semibold)
                                 .foregroundStyle(.white)
                             
-                            Text("Tony's Relaxation")
+                            Text(currentSong?.authors[0] ?? "Tony's Relaxation")
                                 .foregroundStyle(.gray)
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -143,16 +194,16 @@ struct MusicPlayer: View {
                     }
                     
                     Slider(value: Binding(get: {
-                       currentTime
-                   }, set: { newValue in
-                       seekAudio(to: newValue)
-                   }), in: 0...totalTime)
-                   .accentColor(.white)
+                        currentTime
+                    }, set: { newValue in
+                        seekAudio(to: newValue)
+                    }), in: 0...totalTime)
+                    .accentColor(.white)
                     
                     HStack{
                         Text(timeString(time: currentTime))
                             .foregroundStyle(.white)
-                            Spacer()
+                        Spacer()
                         Text(timeString(time: totalTime))
                             .foregroundStyle(.white)
                     }
@@ -191,16 +242,20 @@ struct MusicPlayer: View {
                 VStack(spacing: spacing) {
                     
                     HStack(spacing: 15){
-                        Image(systemName: "speaker.fill")
-                            .colorInvert()
-                            
-                        Capsule()
-                            .fill(.ultraThinMaterial)
-                            .environment(\.colorScheme, .light)
-                            .frame(height: 5)
-                        Image(systemName: "speaker.wave.3.fill")
-                            .colorInvert()
+                        
+                        decreaseVolumeBtn
+                        
+                        Slider(value: $volume,
+                               in: volumeRange,
+                               step: volumeStep) { volumeHasChanged in
+                            self.volumeHasChanged = volumeHasChanged
+//                               setSystemVolume(volume)
+                        }
+                               .accentColor(.white)
+                        
+                        increaseVolumeBtn
                     }
+                    
                     
                     HStack(alignment: .top, spacing: size.width * 0.18){
                         
@@ -218,9 +273,9 @@ struct MusicPlayer: View {
                                 Image(systemName: "airpodspro.chargingcase.wireless.fill")
                                     .font(.title2)
                             }
-                                Text("6221 Airpods")
-                                    .font(.caption)
-                                    .foregroundColor(.white)
+                            Text("6221 Airpods")
+                                .font(.caption)
+                                .foregroundColor(.white)
                         }
                         
                         Button{
@@ -235,11 +290,10 @@ struct MusicPlayer: View {
                     .blendMode(.overlay)
                     .padding(.top, spacing)
                 }
-                .frame(height: size.height / 2.5, alignment: .bottom)
+                .frame(height: size.height / 3, alignment: .bottom)
             }
         }
     }
-    
 }
 
 struct MusicPlayer_Previews: PreviewProvider {
@@ -262,4 +316,3 @@ extension View {
         return 0
     }
 }
-
