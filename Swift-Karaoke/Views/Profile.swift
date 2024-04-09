@@ -8,7 +8,7 @@ struct Profile: View {
     let topSongs = [
         ("drown", "milet_drown"),
         ("ref:rain", "aimer_ref_rain"),
-        ("when christmas comes to town", "when christmas comes to town"),
+        ("Polar Express", "when christmas comes to town"),
         // 更多歌曲...
     ]
 
