@@ -6,9 +6,9 @@ struct Profile: View {
     let userName = "Student beg for A"
     let userDescription = "Karaoke enthusiast. Love to explore new songs and share with friends."
     let topSongs = [
-        ("Song Title 1", "mm"),
-        ("Song Title 2", "mm"),
-        ("Song Title 3", "mm"),
+        ("drown", "milet_drown"),
+        ("ref:rain", "aimer_ref_rain"),
+        ("when christmas comes to town", "when christmas comes to town"),
         // 更多歌曲...
     ]
 
