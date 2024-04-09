@@ -2,9 +2,10 @@ import SwiftUI
 import AVKit
 
 struct KaraokeMode: View {
-    let audioFileName = "Seasons In The Sun"
-    var songName: String
-    var artistName: String
+    let songName: String
+    let songsLibrary : [String: Song] = songsDictionary
+    
+    @State private var songInfo: Song?
     @State private var lyrics: [String] = []
     @State private var lyrics_times: [TimeInterval] = []
     @State private var lyricsPointer = 0
@@ -32,8 +33,14 @@ struct KaraokeMode: View {
                     .frame(width: 350, height: 190)
             }
         }
-        .onAppear(perform: setupAudio) // Call setupAudio when the view appears
-        .onAppear(perform: loadLyricsFromFile)
+        .onAppear(perform: {
+            // retrieve the song from the library
+            let thisSong = songsLibrary[songName]
+                songInfo = thisSong
+                setupAudio()
+                loadLyricsFromFile()
+            
+        }) // Call setupAudio when the view appears
         .onReceive(Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()) { _ in
             updateProgress() // Update progress on timer tick
             updateLyricsPointer()
@@ -72,7 +79,15 @@ struct KaraokeMode: View {
                                 .fontWeight(.semibold)
                                 .foregroundStyle(.white)
                             
-                            Text(artistName)
+                            HStack{
+                                if let singers = songInfo?.singer{
+                                    ForEach(singers, id:\.self) {name in
+                                    Text(name)}
+                                } else {
+                                    Text("Unknown singer")
+                                
+                                }
+                            }
                                 .foregroundStyle(.white)
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -167,7 +182,7 @@ struct KaraokeMode: View {
     }
     
     private func loadLyricsFromFile(){
-        guard let lyricsURL = Bundle.main.url(forResource: songName, withExtension: "lrc") else {
+        guard let lyricsURL = Bundle.main.url(forResource: songInfo?.lyricName, withExtension: "lrc") else {
             print("Lyrics of \(songName) not found.")
             return
         }
@@ -219,7 +234,7 @@ struct KaraokeMode: View {
     
     
     private func setupAudio() {
-        guard let url = Bundle.main.url(forResource: audioFileName, withExtension: "mp3")
+        guard let url = Bundle.main.url(forResource: songInfo?.KaraokeName, withExtension: songInfo?.trackType)
         else{
             return
         }
@@ -275,7 +290,7 @@ struct KaraokeMode: View {
 }
 struct KaraokeMode_Previews: PreviewProvider {
     static var previews: some View {
-        KaraokeMode(songName: "Seasons In The Sun", artistName: "Westlife")
+        KaraokeMode(songName: "Seasons in the Sun")
             .preferredColorScheme(.dark)
     }
 }
