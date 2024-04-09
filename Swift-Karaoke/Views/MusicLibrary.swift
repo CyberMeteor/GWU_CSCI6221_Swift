@@ -34,9 +34,9 @@ class Song {
     }
 }
 
-class SongLibrary {
-    static let shared = SongLibrary()
-    var songs: [Song] = [Song(audioFileName: "Ref_rain", authors: ["Aimer"], lyricPath: "Aimer_ref_rain_filtered", year: "2018", genre: "rock", album: "Sun Dance & Penny Rain", image: "aimer_ref_rain"),
+class RecentPlayedList: ObservableObject {
+    static let shared = RecentPlayedList()
+    @Published var songs: [Song] = [Song(audioFileName: "Ref_rain", authors: ["Aimer"], lyricPath: "Aimer_ref_rain_filtered", year: "2018", genre: "rock", album: "Sun Dance & Penny Rain", image: "aimer_ref_rain"),
                          
                          Song(audioFileName: "Drown", authors: ["Milet"], lyricPath: "Milet_japanese_only", year: "2019", genre: "country", album: "Inside You", image: "milet_drown"),
                          
@@ -47,13 +47,25 @@ class SongLibrary {
                          Song(audioFileName: "When Christmas comes to town", authors: ["Hanks"], lyricPath: "When Christmas comes to town", year: "2004", genre: "pop", album: "The Polar Express: Original Motion Picture Soundtrack", image: "when christmas comes to town"),
                          
                          Song(audioFileName: "Rolling in the Deep", authors: ["Adele"], lyricPath: "Adele_rolling_in_the_deep_english_only", year: "2011", genre: "pop", album: "21", image: "adele_rolling in the deep")]
+    
+    func addSong(_ newSong: Song) {
+        songs.insert(newSong, at: 0)
+        if songs.count > 8 {
+            songs.removeLast()
+        }
+    }
+    
+    func updateSongsOrder(audioFileName: String) {
+        if let index = songs.firstIndex(where: { $0.audioFileName == audioFileName }) {
+            let songToMove = songs.remove(at: index)
+            songs.insert(songToMove, at: 0)
+        }
+    }
 }
 
 struct MusicLibrary: View {
-    var songLibrary = SongLibrary.shared.songs
-    
+    @ObservedObject var recentPlayedList = RecentPlayedList.shared
     let maxCapacity: Int = 8
-    
     
     // 控制'MusicPlayer()'视图展开
     @Binding var expandSheet: Bool
@@ -86,7 +98,7 @@ struct MusicLibrary: View {
                         HStack(spacing: 17)  {
                             // 'ForEach' 遍历 'songs' 列表中的元素('Song'实例)，
                             // 为每个'Song'实例 生成一个 'RecentPlayedSong()' 视图 (218行)
-                            ForEach(songLibrary, id: \.audioFileName) { song in
+                            ForEach(recentPlayedList.songs, id: \.audioFileName) { song in
                                 RecentPlayedSong(song: song, currentSong: $currentSong, showMusicPlayer: $showMusicPlayer)
                             }
                         }.padding([.horizontal, .bottom])
@@ -194,18 +206,14 @@ struct MusicLibrary: View {
                 }
             }
         }
-        // 从底部弹出'MusicPlayer()'视图
         .sheet(isPresented: $showMusicPlayer) {
-                // '.wrappedValue' 用于从 'Namespace()' 实例中获取其包装的值，即'Namespace.ID'
-                // 'Namespace.ID' 传递给 'MusicPlayer()' 实现视图到另一视图的过渡
                 MusicPlayer(currentSong: currentSong, expandSheet: $showMusicPlayer, animation: Namespace().wrappedValue)
         }
     }
-    
-    
 }
 
 
+//MARK: -Recent Played
 struct RecentPlayedSong: View {
     var song: Song
     @Binding var currentSong: Song?
@@ -238,8 +246,10 @@ struct RecentPlayedSong: View {
                             
                             Button {
                                 print("Playing: \(song.audioFileName)")
-                                currentSong = song
                                 showMusicPlayer = true
+                                currentSong = song
+                                song.playedTimes += 1
+                                RecentPlayedList.shared.updateSongsOrder(audioFileName: song.audioFileName)
                             } label: {
                                 Image("play")
                                     .resizable()
@@ -253,7 +263,6 @@ struct RecentPlayedSong: View {
         }.clipped().cornerRadius(15)
     }
 }
-
 
 struct MusicLibrary_Previews: PreviewProvider {
     static var previews: some View {
