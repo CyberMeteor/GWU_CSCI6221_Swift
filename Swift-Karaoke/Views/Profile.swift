@@ -2,7 +2,7 @@ import SwiftUI
 
 struct Profile: View {
     // 假设有五个不同的头像图片名称
-    let profileImages = ["mm", "mm2", "mm3", "mm4", "mm5"]
+    let profileImages = ["mm", "milet_drown", "mm3", "mm4", "mm5"]
     let userName = "Student"
     let userDescription = "Karaoke enthusiast. Love to explore new songs and share with friends."
     let topSongs = [
