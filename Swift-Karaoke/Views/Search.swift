@@ -11,6 +11,9 @@ struct Search: View {
     
     @State var searchText: String = ""
     @State var sampleSortList = [SongsModel]()
+    @State var isMusicPlayerShowed = false
+    
+    @EnvironmentObject var songManager: SongManager
     
     var body: some View {
         VStack {
@@ -46,9 +49,16 @@ struct Search: View {
                         
                         Spacer()
                     }
+                    .onTapGesture {
+                        songManager.playSong(song: item)
+                        isMusicPlayerShowed.toggle()
+                    }
                 }
             }
             .padding()
+        }
+        .sheet(isPresented: $isMusicPlayerShowed) {
+            MusicPlayer(expandSheet: .constant(true), animation: Namespace().wrappedValue)
         }
     }
     

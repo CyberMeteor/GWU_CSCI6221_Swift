@@ -57,6 +57,7 @@ struct ContentView: View {
                     Image(systemName: "magnifyingglass.circle.fill")
                     Text("Search")
                 }
+                .environmentObject(songManager)
             
             Profile()
                 .tabItem() {

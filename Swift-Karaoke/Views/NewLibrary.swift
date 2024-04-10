@@ -160,6 +160,9 @@ struct NewLibrary: View {
                             
                             Text("\(item.title)")
                                 .font(.headline)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                                .frame(width: 160, alignment: .leading)
                             
                             Text("\(item.artist)")
                                 .font(.caption)
