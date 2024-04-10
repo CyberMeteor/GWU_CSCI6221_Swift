@@ -11,6 +11,7 @@ struct Profile: View {
         ("Polar Express", "when christmas comes to town"),
         // 更多歌曲...
     ]
+    @State private var showThumbUp = false
 
     var body: some View {
         VStack(alignment: .center) {
@@ -87,19 +88,63 @@ struct Profile: View {
 
             // 添加的绿色按钮
             Button(action: {
-                // 执行点赞的动作
-            }) {
-                HStack {
-                    Image(systemName: "hand.thumbsup")
-                        .font(.title)
-                    Text("Give us a thumb-up")
-                        .fontWeight(.bold)
+                // 显示thumb up图案，并在2秒后自动隐藏
+                withAnimation {
+                    self.showThumbUp = true
                 }
-                .padding()
-                .foregroundColor(.white)
-                .background(Color.green)
-                .cornerRadius(40)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    withAnimation {
+                        self.showThumbUp = false
+                    }
+                }
+            }) {
+                Text("Give us a thumb-up")
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 14)
+                    .background(Color.green)
+                    .cornerRadius(22)
+                    .overlay(
+                        Image(systemName: "hand.thumbsup")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .offset(x: -20)
+                    )
             }
+            .padding(.bottom, 20)
+
+            // thumb up图案显示
+            if showThumbUp {
+                Image(systemName: "hand.thumbsup.fill")
+                    .font(.largeTitle)
+                    .foregroundColor(.green)
+                    .scaleEffect(1.5)
+                    .transition(.opacity) // 可以选择不同的过渡效果
+            }
+
+
+
+            
+            VStack(alignment: .leading, spacing: 10) {
+                ForEach(0..<5, id: \.self) { index in
+                    HStack {
+                        Image(profileImages[0]) // 这里假设每个堆栈使用相同的头像
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 60, height: 60)
+                            .clipShape(Circle())
+                            .shadow(radius: 2)
+                            .overlay(Circle().stroke(Color.white, lineWidth: 1))
+                        
+                        Text("Friend \(index + 1)")
+                            .font(.body)
+                            .padding(.leading, 8)
+                    }
+                }
+            }
+            .padding(.leading, 20)
+            .padding(.top, 20)
             .padding(.bottom, 20)
 
 
