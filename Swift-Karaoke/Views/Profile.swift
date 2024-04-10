@@ -32,7 +32,7 @@ struct Profile: View {
                     .fontWeight(.bold)
                     .padding(.leading, 18) // 根据需要调整间距
             }
-            .padding(.top, 20)
+            .padding(.top, 230)
             .padding(.bottom, 20)
             
             // 用户描述
@@ -92,7 +92,7 @@ struct Profile: View {
                 withAnimation {
                     self.showThumbUp = true
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     withAnimation {
                         self.showThumbUp = false
                     }
@@ -105,12 +105,13 @@ struct Profile: View {
                     .padding(.horizontal, 14)
                     .background(Color.green)
                     .cornerRadius(22)
-                    .overlay(
+                    /*.overlay(
                         Image(systemName: "hand.thumbsup")
                             .font(.title)
                             .foregroundColor(.white)
                             .offset(x: -20)
                     )
+                     */
             }
             .padding(.bottom, 20)
 
@@ -136,14 +137,16 @@ struct Profile: View {
                             .clipShape(Circle())
                             .shadow(radius: 2)
                             .overlay(Circle().stroke(Color.white, lineWidth: 1))
-                        
-                        Text("Friend \(index + 1)")
-                            .font(.body)
+                        Spacer()
+                        Text("Name \(index + 1)")
+                            .font(.title)
                             .padding(.leading, 8)
+                            .fontWeight(.bold)
+
                     }
                 }
             }
-            .padding(.leading, 20)
+            .padding([.leading,.trailing], 20)
             .padding(.top, 20)
             .padding(.bottom, 20)
 
