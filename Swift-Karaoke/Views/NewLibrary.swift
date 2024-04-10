@@ -11,6 +11,7 @@ struct NewLibrary: View {
     
     @State private var expandSheet = false
     @State private var isMusicPlayerShowed = false
+    @State private var selectedTag: String? = nil
     @Namespace private var animation
     
     @EnvironmentObject var songManager: SongManager
@@ -77,7 +78,12 @@ struct NewLibrary: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: [GridItem(.fixed(60)), GridItem(.fixed(60)), GridItem(.fixed(60)), GridItem(.fixed(60))], content: {
-                    ForEach(sampleSongModel, id:  \.id) { item in
+                    ForEach(sampleSongModel.filter { song in
+                        guard let selectedTag = selectedTag else {
+                            return true
+                        }
+                        return song.tags.contains(selectedTag)
+                    }, id:  \.id) { item in
                         HStack(spacing: 20, content: {
                             Image(item.cover)
                                 .resizable()
@@ -117,6 +123,13 @@ struct NewLibrary: View {
                         .padding(.horizontal)
                         .padding(.vertical, 10)
                         .background(RoundedRectangle(cornerRadius: 12).fill(.white.opacity(0.15)))
+                        .onTapGesture {
+                            if selectedTag == item.tag {
+                                selectedTag = nil
+                            } else {
+                                selectedTag = item.tag
+                            }
+                        }
                 }
             }
             .padding()
@@ -186,6 +199,9 @@ struct NewLibrary: View {
                             
                             Text("\(item.title)")
                                 .font(.headline)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                                .frame(width: 160, alignment: .leading)
                             
                             Text("\(item.artist)")
                                 .font(.caption)

@@ -8,7 +8,7 @@
 import SwiftUI
 
 class SongManager: ObservableObject {
-    @Published private(set) var song: SongsModel = SongsModel(artist: "", audio_url: "", cover: "", title: "", exten: "")
+    @Published private(set) var song: SongsModel = SongsModel(artist: "", audio_url: "", cover: "", title: "", exten: "", tags: [])
     @Published var rencentPlayedList: [SongsModel] = sampleSongModel
     
     func playSong(song: SongsModel) {
