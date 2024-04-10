@@ -2,7 +2,7 @@ import SwiftUI
 
 struct Profile: View {
     // 假设有五个不同的头像图片名称
-    let profileImages = ["mm"]
+    let profileImages = ["mm", "mm2", "mm3", "mm4", "mm5"]
     let userName = "Student"
     let userDescription = "Karaoke enthusiast. Love to explore new songs and share with friends."
     let topSongs = [
@@ -129,9 +129,9 @@ struct Profile: View {
                 
                 
                 VStack(alignment: .leading, spacing: 10) {
-                    ForEach(0..<5, id: \.self) { index in
+                    ForEach(profileImages.indices, id: \.self) { index in
                         HStack {
-                            Image(profileImages[0]) // 这里假设每个堆栈使用相同的头像
+                            Image(profileImages[index]) // 这里假设每个堆栈使用相同的头像
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 60, height: 60)
