@@ -8,6 +8,18 @@
 import SwiftUI
 
 struct KaraokePlayList: View {
+    @State private var songOrder: [String]
+    @State private var draggedItem: String? = nil
+        
+    init() {
+        // Filter songs with a non-empty lyricName and collect their names
+        let filteredSongNames = songsDictionary
+            .filter { $0.value.lyricName != nil && !$0.value.lyricName!.isEmpty }
+            .map { $0.key }
+        
+        // Initialize songOrder with filtered song names
+        songOrder = filteredSongNames
+    }
     
     var body: some View {
         NavigationView{
@@ -21,27 +33,33 @@ struct KaraokePlayList: View {
                     })
                 VStack(alignment:.leading){
                     Text("Karaoke Mode")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        .foregroundColor(.white)
+                        .font(.title)
+                        .fontWeight(.bold)
                         .padding(.vertical, 1)
                     Text("Select a song to start singing.")
+                        .foregroundColor(.white)
                         .padding(.vertical, 3)
+                    
                     ScrollView {
-                        // Iterate over each item in songsDictionary
-                        ForEach(songsDictionary.sorted(by: { $0.key < $1.key }), id: \.key) { (songName, song) in
-                            if let lyricName = song.lyricName, !lyricName.isEmpty {
-                                // Generate a KaraokeListRow for each song that has lyrics
-                                KaraokeListRow(KaraokeSong: song)
+                        // Generate a KaraokeListRow for each song in songOrder
+                        ForEach(songOrder, id: \.self) { songName in
+                            let song = songsDictionary[songName]
+                                KaraokeListRow(KaraokeSong: song!)
                                     .padding(.vertical, 5)
                             }
-                            
+                            .onMove(perform: move)
                         }
                     }
                 }
-                .padding(.leading, 20)
-            }
+            .padding(20)
         }
-    }}
+    }
+    // function to perform dragging songs to move
+    private func move(from source: IndexSet, to destination: Int) {
+            songOrder.move(fromOffsets: source, toOffset: destination)
+        }
+}
 
 struct KaraokeListRow: View {
     var KaraokeSong: Song
@@ -53,18 +71,21 @@ struct KaraokeListRow: View {
                 .clipShape(RoundedRectangle(cornerRadius: 8))
             VStack (alignment: .leading) {
                 Text(KaraokeSong.name)
-                    .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.leading)
                     .font(.headline)
                     .fontWeight(.bold)
                     .foregroundColor(Color.primary)
                 ForEach(KaraokeSong.singer, id: \.self) { name in
                     Text(name)
+                        .foregroundColor(.white)
                         .font(.subheadline)
                         .foregroundColor(Color.primary)
                 }
             }
-            .padding(.horizontal, 10)
+            .padding(.horizontal, 5)
             Spacer()
+            
             Button(action: {
                 // Implement your play button action
             }) {
@@ -78,25 +99,14 @@ struct KaraokeListRow: View {
                         )
                 }
             }
-            Button {
-                
-            } label: {
-                Image(systemName: "ellipsis")
-                    .foregroundColor(.white)
-                    .padding(12)
-                    .background{
-                        Circle()
-                            .fill(.ultraThinMaterial)
-                            .environment(\.colorScheme, .light)
-                    }
-            }
         }
+        .background(.clear)
     }
 }
 
 struct KaraokePlayList_Previews: PreviewProvider {
     static var previews: some View {
         KaraokePlayList()
-            .preferredColorScheme(.dark)
+//            .preferredColorScheme(.dark)
     }
 }

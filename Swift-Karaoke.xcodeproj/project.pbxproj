@@ -24,15 +24,14 @@
 		197240422BC4767A00B58C34 /* Adele - Rolling in the Deep (Explicit).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1972403B2BC4767A00B58C34 /* Adele - Rolling in the Deep (Explicit).mp3 */; };
 		197240432BC4767A00B58C34 /* Aimer - Ref_rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1972403C2BC4767A00B58C34 /* Aimer - Ref_rain.mp3 */; };
 		197240452BC4770C00B58C34 /* allSongs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197240442BC4770C00B58C34 /* allSongs.swift */; };
-		1972404A2BC4F91900B58C34 /* KaraokeOnStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197240492BC4F91900B58C34 /* KaraokeOnStart.swift */; };
-		19E90FFC2BBE325A00E49E59 /* Seasons In The Sun.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 19E90FFB2BBE325A00E49E59 /* Seasons In The Sun.lrc */; };
-		19E90FFE2BBE329300E49E59 /* Seasons In The Sun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19E90FFD2BBE329300E49E59 /* Seasons In The Sun.mp3 */; };
+		1972404E2BC5C5CC00B58C34 /* Seasons In The Sun.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 1972404D2BC5C5CC00B58C34 /* Seasons In The Sun.lrc */; };
+		197240522BC5C72100B58C34 /* Seasons In The Sun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 197240512BC5C72100B58C34 /* Seasons In The Sun.mp3 */; };
+		197240542BC5FCDF00B58C34 /* KaraokePlayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197240532BC5FCDF00B58C34 /* KaraokePlayList.swift */; };
 		875EDB3D2BBB2FD4005A82B3 /* KaraokeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875EDB3C2BBB2FD4005A82B3 /* KaraokeMode.swift */; };
 		875EDB3F2BBB2FEE005A82B3 /* ListenTogether.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875EDB3E2BBB2FEE005A82B3 /* ListenTogether.swift */; };
 		875EDB412BBB301A005A82B3 /* MusicLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875EDB402BBB301A005A82B3 /* MusicLibrary.swift */; };
 		875EDB432BBB302D005A82B3 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875EDB422BBB302D005A82B3 /* MusicPlayer.swift */; };
 		875EDB452BBB3047005A82B3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875EDB442BBB3047005A82B3 /* Profile.swift */; };
-		87B3C35D2BB1C99F002D13EC /* Tuesday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 87B3C35C2BB1C99F002D13EC /* Tuesday.mp3 */; };
 		F2B1E44E2BAB83A10000DEB4 /* Swift_KaraokeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B1E44D2BAB83A10000DEB4 /* Swift_KaraokeApp.swift */; };
 		F2B1E4502BAB83A10000DEB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B1E44F2BAB83A10000DEB4 /* ContentView.swift */; };
 		F2B1E4522BAB83A30000DEB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B1E4512BAB83A30000DEB4 /* Assets.xcassets */; };
@@ -77,15 +76,14 @@
 		1972403B2BC4767A00B58C34 /* Adele - Rolling in the Deep (Explicit).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Adele - Rolling in the Deep (Explicit).mp3"; path = "Music_Library/Songs/Adele - Rolling in the Deep (Explicit).mp3"; sourceTree = SOURCE_ROOT; };
 		1972403C2BC4767A00B58C34 /* Aimer - Ref_rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Aimer - Ref_rain.mp3"; path = "Music_Library/Songs/Aimer - Ref_rain.mp3"; sourceTree = SOURCE_ROOT; };
 		197240442BC4770C00B58C34 /* allSongs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = allSongs.swift; sourceTree = "<group>"; };
-		197240492BC4F91900B58C34 /* KaraokeOnStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaraokeOnStart.swift; sourceTree = "<group>"; };
-		19E90FFB2BBE325A00E49E59 /* Seasons In The Sun.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Seasons In The Sun.lrc"; sourceTree = "<group>"; };
-		19E90FFD2BBE329300E49E59 /* Seasons In The Sun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Seasons In The Sun.mp3"; sourceTree = "<group>"; };
+		1972404D2BC5C5CC00B58C34 /* Seasons In The Sun.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Seasons In The Sun.lrc"; sourceTree = "<group>"; };
+		197240512BC5C72100B58C34 /* Seasons In The Sun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Seasons In The Sun.mp3"; sourceTree = "<group>"; };
+		197240532BC5FCDF00B58C34 /* KaraokePlayList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaraokePlayList.swift; sourceTree = "<group>"; };
 		875EDB3C2BBB2FD4005A82B3 /* KaraokeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaraokeMode.swift; sourceTree = "<group>"; };
 		875EDB3E2BBB2FEE005A82B3 /* ListenTogether.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenTogether.swift; sourceTree = "<group>"; };
 		875EDB402BBB301A005A82B3 /* MusicLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLibrary.swift; sourceTree = "<group>"; };
 		875EDB422BBB302D005A82B3 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		875EDB442BBB3047005A82B3 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		87B3C35C2BB1C99F002D13EC /* Tuesday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Tuesday.mp3; sourceTree = "<group>"; };
 		F2B1E44A2BAB83A10000DEB4 /* Swift-Karaoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Karaoke.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B1E44D2BAB83A10000DEB4 /* Swift_KaraokeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_KaraokeApp.swift; sourceTree = "<group>"; };
 		F2B1E44F2BAB83A10000DEB4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -128,13 +126,12 @@
 			children = (
 				1972403B2BC4767A00B58C34 /* Adele - Rolling in the Deep (Explicit).mp3 */,
 				1972403C2BC4767A00B58C34 /* Aimer - Ref_rain.mp3 */,
+				197240512BC5C72100B58C34 /* Seasons In The Sun.mp3 */,
 				1972403A2BC4767A00B58C34 /* Bonnie Tyler - Total Eclipse of the Heart.wav */,
 				197240372BC4767900B58C34 /* Ed Sheeran-Perfect.flac */,
 				197240362BC4767900B58C34 /* Idina Menzel_Aurora-Into the Unknown.mp3 */,
 				197240392BC4767A00B58C34 /* milet - Drown.mp3 */,
 				197240382BC4767900B58C34 /* When Christmas comes to town.mp3 */,
-				19E90FFD2BBE329300E49E59 /* Seasons In The Sun.mp3 */,
-				87B3C35C2BB1C99F002D13EC /* Tuesday.mp3 */,
 			);
 			path = Songs;
 			sourceTree = "<group>";
@@ -157,8 +154,8 @@
 				1972401E2BC4743600B58C34 /* When Christmas comes to town.lrc */,
 				1972401A2BC4742F00B58C34 /* Adele_rolling_in_the_deep_english_only.lrc */,
 				197240182BC4742F00B58C34 /* Aimer_ref_rain_filtered.lrc */,
+				1972404D2BC5C5CC00B58C34 /* Seasons In The Sun.lrc */,
 				197240192BC4742F00B58C34 /* Milet_japanese_only.lrc */,
-				19E90FFB2BBE325A00E49E59 /* Seasons In The Sun.lrc */,
 			);
 			path = Lyrics;
 			sourceTree = "<group>";
@@ -177,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				875EDB3C2BBB2FD4005A82B3 /* KaraokeMode.swift */,
-				197240492BC4F91900B58C34 /* KaraokeOnStart.swift */,
+				197240532BC5FCDF00B58C34 /* KaraokePlayList.swift */,
 				875EDB3E2BBB2FEE005A82B3 /* ListenTogether.swift */,
 				875EDB402BBB301A005A82B3 /* MusicLibrary.swift */,
 				875EDB422BBB302D005A82B3 /* MusicPlayer.swift */,
@@ -352,18 +349,17 @@
 				1972403E2BC4767A00B58C34 /* Ed Sheeran-Perfect.flac in Resources */,
 				197240412BC4767A00B58C34 /* Bonnie Tyler - Total Eclipse of the Heart.wav in Resources */,
 				1972403F2BC4767A00B58C34 /* When Christmas comes to town.mp3 in Resources */,
-				87B3C35D2BB1C99F002D13EC /* Tuesday.mp3 in Resources */,
+				1972404E2BC5C5CC00B58C34 /* Seasons In The Sun.lrc in Resources */,
 				1972401B2BC4742F00B58C34 /* Aimer_ref_rain_filtered.lrc in Resources */,
 				1972401C2BC4742F00B58C34 /* Milet_japanese_only.lrc in Resources */,
+				197240522BC5C72100B58C34 /* Seasons In The Sun.mp3 in Resources */,
 				197240402BC4767A00B58C34 /* milet - Drown.mp3 in Resources */,
-				19E90FFE2BBE329300E49E59 /* Seasons In The Sun.mp3 in Resources */,
 				1972401F2BC4743600B58C34 /* When Christmas comes to town.lrc in Resources */,
 				F2B1E4552BAB83A30000DEB4 /* Preview Assets.xcassets in Resources */,
 				1972403D2BC4767A00B58C34 /* Idina Menzel_Aurora-Into the Unknown.mp3 in Resources */,
 				197240432BC4767A00B58C34 /* Aimer - Ref_rain.mp3 in Resources */,
 				F2B1E4522BAB83A30000DEB4 /* Assets.xcassets in Resources */,
 				197240422BC4767A00B58C34 /* Adele - Rolling in the Deep (Explicit).mp3 in Resources */,
-				19E90FFC2BBE325A00E49E59 /* Seasons In The Sun.lrc in Resources */,
 				1972402F2BC4746C00B58C34 /* When Christmas comes to town [music].mp3 in Resources */,
 				1972402B2BC4746C00B58C34 /* Adele - Rolling in the Deep (Explicit)-accompaniment-C minor-105bpm-440hz.mp3 in Resources */,
 				1972402E2BC4746C00B58C34 /* Westlife - Seasons In The Sun-accompaniment-F# major-88bpm-441hz.mp3 in Resources */,
@@ -400,9 +396,9 @@
 				197240452BC4770C00B58C34 /* allSongs.swift in Sources */,
 				875EDB452BBB3047005A82B3 /* Profile.swift in Sources */,
 				F2B1E44E2BAB83A10000DEB4 /* Swift_KaraokeApp.swift in Sources */,
+				197240542BC5FCDF00B58C34 /* KaraokePlayList.swift in Sources */,
 				875EDB412BBB301A005A82B3 /* MusicLibrary.swift in Sources */,
 				875EDB3D2BBB2FD4005A82B3 /* KaraokeMode.swift in Sources */,
-				1972404A2BC4F91900B58C34 /* KaraokeOnStart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
