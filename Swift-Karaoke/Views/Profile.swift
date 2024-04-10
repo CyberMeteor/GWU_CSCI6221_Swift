@@ -2,7 +2,7 @@ import SwiftUI
 
 struct Profile: View {
     // 假设有五个不同的头像图片名称
-    let profileImages = ["mm", "mm2", "mm3", "mm4", "mm5"]
+    let profileImages = ["mm"]
     let userName = "Student beg for A"
     let userDescription = "Karaoke enthusiast. Love to explore new songs and share with friends."
     let topSongs = [
@@ -47,16 +47,64 @@ struct Profile: View {
                 .padding(.horizontal)
                 .padding(.bottom, 20)
             
+
             // 数据部分
             HStack {
-                Text("Followers: 120")
-                    .font(.body)
+                VStack {
+                    Text("300")
+                        .font(.system(size: 22))
+                        .fontWeight(.semibold)
+                    Text("Following")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
                 Spacer()
-                Text("Following: 75")
-                    .font(.body)
+                VStack {
+                    Text("3.5M")
+                        .font(.system(size: 22))
+                        .fontWeight(.semibold)
+                    Text("Followers")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+                Spacer()
+                VStack {
+                    Text("20")
+                        .font(.system(size: 22))
+                        .fontWeight(.semibold)
+                    Text("Close Friends")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
             }
+            .frame(maxWidth: .infinity)
             .padding(.horizontal)
             .padding(.bottom, 20)
+
+            // 添加的提示信息
+            Text("We hope you enjoy the app!")
+                .font(.body)
+                .multilineTextAlignment(.center)
+                .padding(.bottom, 8)
+
+            // 添加的绿色按钮
+            Button(action: {
+                // 执行点赞的动作
+            }) {
+                HStack {
+                    Image(systemName: "hand.thumbsup")
+                        .font(.title)
+                    Text("Give us a thumb-up")
+                        .fontWeight(.bold)
+                }
+                .padding()
+                .foregroundColor(.white)
+                .background(Color.green)
+                .cornerRadius(40)
+            }
+            .padding(.bottom, 20)
+
+
 
             // 显示名为“heatmap-removebg-preview”的图片，并与时钟符号并排显示
             HStack {
