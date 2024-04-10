@@ -25,7 +25,7 @@ struct KaraokeListRow: View {
     
     var body: some View {
         HStack{
-            KaraokeSong.cover
+//            KaraokeSong.cover
                 
 //            .frame(height: size.width - 50)
 //            .padding(.vertical, size.height < 700 ? 10: 30)

@@ -25,6 +25,8 @@ struct NewLibrary: View {
             
             LargeCards()
             
+            RecentPlayed()
+            
         }
         .ignoresSafeArea()
         .sheet(isPresented: $isMusicPlayerShowed) {
@@ -156,6 +158,46 @@ struct NewLibrary: View {
                     }
                 })
                 .padding(.horizontal)
+            }
+        }
+    }
+    
+    // Recent Played View
+    @ViewBuilder func RecentPlayed() -> some View {
+        VStack {
+            HStack {
+                Text("Recent Played")
+                    .font(.title3)
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .padding()
+                
+                Spacer()
+            }
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 15, content: {
+                    ForEach(songManager.rencentPlayedList, id: \.id) { item in
+                        VStack(alignment: .leading, content: {
+                            Image(item.cover)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 160, height: 160)
+                                .clipShape(.rect(cornerRadius: 20))
+                            
+                            Text("\(item.title)")
+                                .font(.headline)
+                            
+                            Text("\(item.artist)")
+                                .font(.caption)
+                        })
+                        .onTapGesture {
+                            songManager.playSong(song: item)
+                            isMusicPlayerShowed.toggle()
+                        }
+                    }
+                })
+                .padding(.horizontal)
+                .padding(.bottom, 100)
             }
         }
     }

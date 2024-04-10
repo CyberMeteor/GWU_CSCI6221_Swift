@@ -227,6 +227,7 @@ struct MusicPlayer: View {
                         Image(systemName: isPlaying ? "pause.fill" : "play.fill")
                             .font(size.height < 300 ? .largeTitle : .system(size: 50))
                             .onTapGesture {
+                                songManager.updateSongsOrder(title: songManager.song.title)
                                 isPlaying ? stopAudio() : playAudio()
                             }
                     }
