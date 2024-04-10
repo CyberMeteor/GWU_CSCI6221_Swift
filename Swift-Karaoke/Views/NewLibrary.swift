@@ -103,7 +103,7 @@ struct NewLibrary: View {
                             Spacer()
                         })
                         .onTapGesture {
-                            songManager.playSong(song: item)
+                            songManager.setSong(song: item)
                             isMusicPlayerShowed.toggle()
                         }
                     }
@@ -168,7 +168,7 @@ struct NewLibrary: View {
                                 .font(.caption)
                         })
                         .onTapGesture {
-                            songManager.playSong(song: item)
+                            songManager.setSong(song: item)
                             isMusicPlayerShowed.toggle()
                         }
                     }
@@ -210,7 +210,7 @@ struct NewLibrary: View {
                                 .font(.caption)
                         })
                         .onTapGesture {
-                            songManager.playSong(song: item)
+                            songManager.setSong(song: item)
                             isMusicPlayerShowed.toggle()
                         }
                     }

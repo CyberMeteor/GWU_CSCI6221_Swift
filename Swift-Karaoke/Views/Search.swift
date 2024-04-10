@@ -50,7 +50,7 @@ struct Search: View {
                         Spacer()
                     }
                     .onTapGesture {
-                        songManager.playSong(song: item)
+                        songManager.setSong(song: item)
                         isMusicPlayerShowed.toggle()
                     }
                 }

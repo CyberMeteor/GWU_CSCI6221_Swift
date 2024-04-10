@@ -215,7 +215,7 @@ struct MusicPlayer: View {
                 HStack(spacing: size.width * 0.18) {
                     
                     Button{
-                        
+                        songManager.previousSong(title: songManager.song.title)
                     } label: {
                         Image(systemName: "backward.fill")
                             .font(size.height < 300 ? .title3 : .title)
@@ -233,7 +233,7 @@ struct MusicPlayer: View {
                     }
                     
                     Button{
-                        
+                        songManager.nextSong(title: songManager.song.title)
                     } label: {
                         Image(systemName: "forward.fill")
                             .font(size.height < 300 ? .title3 : .title)
