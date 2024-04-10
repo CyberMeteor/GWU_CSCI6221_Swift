@@ -239,7 +239,7 @@ struct MusicPlayer: View {
                     
                     Button{
                         if isPlaying { stopAudio() }
-                        songManager.previousSong(title: songManager.song.title)
+                        songManager.nextSong(title: songManager.song.title)
                         DispatchQueue.global(qos: .userInitiated).async {
                             setupAudio()
                         }
