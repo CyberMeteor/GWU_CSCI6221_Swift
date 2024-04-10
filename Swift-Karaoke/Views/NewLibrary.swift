@@ -122,7 +122,7 @@ struct NewLibrary: View {
                     Text(item.tag)
                         .padding(.horizontal)
                         .padding(.vertical, 10)
-                        .background(RoundedRectangle(cornerRadius: 12).fill(.white.opacity(0.15)))
+                        .background(selectedTag == item.tag ? Color.blue.opacity(0.5) : Color.white.opacity(0.15))
                         .onTapGesture {
                             if selectedTag == item.tag {
                                 selectedTag = nil

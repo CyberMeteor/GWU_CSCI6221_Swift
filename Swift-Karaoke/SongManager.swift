@@ -17,7 +17,7 @@ class SongManager: ObservableObject {
         self.song = song
     }
     
-    // get next song index
+    // set next song
     func nextSong(title: String) {
         if var index = sampleSongModel.firstIndex(where: { $0.title == title }) {
             if index == sampleSongModel.count - 1 {
@@ -30,7 +30,7 @@ class SongManager: ObservableObject {
         }
     }
     
-    // get previous song index
+    // set previous song
     func previousSong(title: String) {
         if var index = sampleSongModel.firstIndex(where: { $0.title == title }) {
             if index == 0 {
