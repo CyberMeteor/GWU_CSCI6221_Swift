@@ -34,7 +34,7 @@ struct Profile: View {
                         .fontWeight(.bold)
                         .padding(.leading, 18) // 根据需要调整间距
                 }
-                .padding(.top, 30)
+                .padding(.top, 80)
                 .padding(.bottom, 20)
                 
                 // 用户描述
@@ -207,6 +207,7 @@ struct Profile: View {
                     .edgesIgnoringSafeArea(.all)
             )
         }
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
