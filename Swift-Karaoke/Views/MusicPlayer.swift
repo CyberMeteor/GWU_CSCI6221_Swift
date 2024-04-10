@@ -215,7 +215,12 @@ struct MusicPlayer: View {
                 HStack(spacing: size.width * 0.18) {
                     
                     Button{
+                        if isPlaying { stopAudio() }
                         songManager.previousSong(title: songManager.song.title)
+                        DispatchQueue.global(qos: .userInitiated).async {
+                            setupAudio()
+                        }
+                        
                     } label: {
                         Image(systemName: "backward.fill")
                             .font(size.height < 300 ? .title3 : .title)
@@ -233,7 +238,12 @@ struct MusicPlayer: View {
                     }
                     
                     Button{
-                        songManager.nextSong(title: songManager.song.title)
+                        if isPlaying { stopAudio() }
+                        songManager.previousSong(title: songManager.song.title)
+                        DispatchQueue.global(qos: .userInitiated).async {
+                            setupAudio()
+                        }
+                        
                     } label: {
                         Image(systemName: "forward.fill")
                             .font(size.height < 300 ? .title3 : .title)
