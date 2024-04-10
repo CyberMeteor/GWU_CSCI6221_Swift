@@ -14,38 +14,35 @@ struct Profile: View {
 
     var body: some View {
         VStack(alignment: .center) {
-            // 头像们，水平排列
-            HStack(spacing: 15) {
-                ForEach(0..<profileImages.count, id: \.self) { index in
-                    VStack {
-                        Image(self.profileImages[index])
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 50, height: 50)
-                            .clipShape(Circle())
-                            .shadow(radius: 5)
-                            .overlay(Circle().stroke(Color.white, lineWidth: 2))
-                        
-                        Text("\(index + 1)")
-                            .font(.caption)
-                    }
-                }
+            // 修改头像和用户名布局
+            HStack {
+                // 头像
+                Image(profileImages[0]) // 假设我们使用第一个头像
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 50, height: 50)
+                    .clipShape(Circle())
+                    .shadow(radius: 5)
+                    .overlay(Circle().stroke(Color.white, lineWidth: 2))
+
+                // 用户名
+                Text(userName)
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .padding(.leading, 8) // 根据需要调整间距
             }
             .padding(.top, 20)
-
-            // 用户名
-            Text(userName)
-                .font(.title)
-                .fontWeight(.bold)
-                .padding(.top, 8)
             
             // 用户描述
+            /*
             Text(userDescription)
                 .font(.body)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
                 .padding(.bottom, 20)
+            */
+            
             
 
             // 数据部分
