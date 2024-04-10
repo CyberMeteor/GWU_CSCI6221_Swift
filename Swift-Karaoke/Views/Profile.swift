@@ -11,13 +11,7 @@ struct Profile: View {
         ("Polar Express", "when christmas comes to town"),
         // 更多歌曲...
     ]
-    let friends: [Friend] = [
-        Friend(imageName: "mm", name: "Alice"),
-        Friend(imageName: "milet_drown", name: "Bob"),
-        Friend(imageName: "mm3", name: "Charlie"),
-        Friend(imageName: "mm4", name: "Diana"),
-        Friend(imageName: "mm5", name: "Eve")
-    ]
+    let profilename=["mm", "milet_drown", "mm3", "mm4", "mm5"]
     @State private var showThumbUp = false
 
     var body: some View {
@@ -136,25 +130,25 @@ struct Profile: View {
                 
                 
                 VStack(alignment: .leading, spacing: 10) {
-                    ForEach(friends, id: \.name) { friend in
+                    ForEach(profileImages.indices, id: \.self) { index in
                         HStack {
-                            Image(friend.imageName)
+                            Image(profileImages[index]) 
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 60, height: 60)
                                 .clipShape(Circle())
                                 .shadow(radius: 2)
                                 .overlay(Circle().stroke(Color.white, lineWidth: 1))
-                            
                             Spacer()
+                            Text(profilename[index])
+                                .font(.title)
+                                .padding(.leading, 8)
+                                .fontWeight(.bold)
                             
-                            Text(friend.name)
-                                .font(.body)
-                                .frame(maxWidth: .infinity, alignment: .trailing)
                         }
                     }
                 }
-                .padding([.leading, .trailing], 20)
+                .padding([.leading,.trailing], 20)
                 .padding(.top, 20)
                 .padding(.bottom, 20)
                 
