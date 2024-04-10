@@ -3,7 +3,7 @@ import SwiftUI
 struct Profile: View {
     // 假设有五个不同的头像图片名称
     let profileImages = ["mm"]
-    let userName = "Student beg for A"
+    let userName = "Student"
     let userDescription = "Karaoke enthusiast. Love to explore new songs and share with friends."
     let topSongs = [
         ("drown", "milet_drown"),
@@ -20,7 +20,7 @@ struct Profile: View {
                 Image(profileImages[0]) // 假设我们使用第一个头像
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 50, height: 50)
+                    .frame(width: 150, height: 150)
                     .clipShape(Circle())
                     .shadow(radius: 5)
                     .overlay(Circle().stroke(Color.white, lineWidth: 2))
@@ -29,9 +29,10 @@ struct Profile: View {
                 Text(userName)
                     .font(.title)
                     .fontWeight(.bold)
-                    .padding(.leading, 8) // 根据需要调整间距
+                    .padding(.leading, 18) // 根据需要调整间距
             }
             .padding(.top, 20)
+            .padding(.bottom, 20)
             
             // 用户描述
             /*
@@ -49,8 +50,8 @@ struct Profile: View {
             HStack {
                 VStack {
                     Text("300")
-                        .font(.system(size: 22))
-                        .fontWeight(.semibold)
+                        .font(.system(size: 26))
+                        .fontWeight(.bold)
                     Text("Following")
                         .font(.caption)
                         .foregroundColor(.secondary)
@@ -58,8 +59,8 @@ struct Profile: View {
                 Spacer()
                 VStack {
                     Text("3.5M")
-                        .font(.system(size: 22))
-                        .fontWeight(.semibold)
+                        .font(.system(size: 26))
+                        .fontWeight(.bold)
                     Text("Followers")
                         .font(.caption)
                         .foregroundColor(.secondary)
@@ -67,9 +68,9 @@ struct Profile: View {
                 Spacer()
                 VStack {
                     Text("20")
-                        .font(.system(size: 22))
-                        .fontWeight(.semibold)
-                    Text("Close Friends")
+                        .font(.system(size: 26))
+                        .fontWeight(.bold)
+                    Text("Friends")
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
