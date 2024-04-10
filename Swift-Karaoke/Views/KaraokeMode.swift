@@ -18,34 +18,35 @@ struct KaraokeMode: View {
     @State private var currentTime: TimeInterval = 0.0
     
     var body: some View {
-        ZStack {
-            Rectangle()
-                .fill(.ultraThickMaterial)
-                .overlay(content: {
-                    Rectangle()
-                    Image("mm")
-                        .blur(radius: 55)
-                })
-            VStack (spacing: 20){
-                LyricsPanel()
-                    .frame(width: 360, height: 521)
-                ControlPanel()
-                    .frame(width: 350, height: 190)
+        NavigationView{
+            ZStack {
+                Rectangle()
+                    .fill(.ultraThickMaterial)
+                    .overlay(content: {
+                        Rectangle()
+                        Image("mm")
+                            .blur(radius: 55)
+                    })
+                VStack (spacing: 20){
+                    LyricsPanel()
+                        .frame(width: 350, height: 521)
+                    ControlPanel()
+                        .frame(width: 350, height: 190)
+                }
             }
-        }
-        .onAppear(perform: {
-            // retrieve the song from the library
-            let thisSong = songsLibrary[songName]
+            .onAppear(perform: {
+                // retrieve the song from the library
+                let thisSong = songsLibrary[songName]
                 songInfo = thisSong
                 setupAudio()
                 loadLyricsFromFile()
-            
-        }) // Call setupAudio when the view appears
-        .onReceive(Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()) { _ in
-            updateProgress() // Update progress on timer tick
-            updateLyricsPointer()
+                
+            }) // Call setupAudio when the view appears
+            .onReceive(Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()) { _ in
+                updateProgress() // Update progress on timer tick
+                updateLyricsPointer()
+            }
         }
-        
     }
     
     
@@ -119,6 +120,16 @@ struct KaraokeMode: View {
                         .onTapGesture {
                             isVolumeSliderVisible = false
                         }
+//                        //written button that returns playlist view
+//                        Button(action: {
+//                            // Implement your play button action
+//                        }) {
+//                            NavigationLink(destination: KaraokePlayList()) {
+//                                Image(systemName: "music.note.list")
+//                                    .foregroundColor(.white)
+//                                    .padding(12)
+//                            }
+//                        }
                         
                         Button(action: {
                             isPlaylistWindowVisible.toggle()
@@ -128,8 +139,8 @@ struct KaraokeMode: View {
                                 .padding(12)
                         }
                         .popover(isPresented: $isPlaylistWindowVisible, arrowEdge: .bottom){
-                            Text("Playlist Window")
-                                .padding()
+                                KaraokePlayList()
+                                    .transition(.move(edge: .bottom))
                         }
                         
                     }
@@ -174,11 +185,8 @@ struct KaraokeMode: View {
                     .frame(maxWidth: .infinity)
                 }
                 .frame(height: size.height / 2.5, alignment: .top)
-                
             }
-            
         }
-        
     }
     
     private func loadLyricsFromFile(){
@@ -218,6 +226,7 @@ struct KaraokeMode: View {
         return TimeInterval((minutes * 60) + seconds)
     }
     
+    // placeholder for in line animation
     private func highlightLyricLine(){
         
     }
@@ -290,8 +299,7 @@ struct KaraokeMode: View {
 }
 struct KaraokeMode_Previews: PreviewProvider {
     static var previews: some View {
-        KaraokeMode(songName: "Seasons in the Sun")
+        KaraokeMode(songName: "Rolling in the Deep")
             .preferredColorScheme(.dark)
     }
 }
-
