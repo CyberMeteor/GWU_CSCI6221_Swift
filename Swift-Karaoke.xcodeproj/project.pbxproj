@@ -24,7 +24,6 @@
 		197240422BC4767A00B58C34 /* Adele - Rolling in the Deep (Explicit).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1972403B2BC4767A00B58C34 /* Adele - Rolling in the Deep (Explicit).mp3 */; };
 		197240432BC4767A00B58C34 /* Aimer - Ref_rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1972403C2BC4767A00B58C34 /* Aimer - Ref_rain.mp3 */; };
 		197240452BC4770C00B58C34 /* allSongs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197240442BC4770C00B58C34 /* allSongs.swift */; };
-		1972404A2BC4F91900B58C34 /* KaraokeOnStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197240492BC4F91900B58C34 /* KaraokeOnStart.swift */; };
 		19E90FFC2BBE325A00E49E59 /* Seasons In The Sun.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 19E90FFB2BBE325A00E49E59 /* Seasons In The Sun.lrc */; };
 		19E90FFE2BBE329300E49E59 /* Seasons In The Sun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19E90FFD2BBE329300E49E59 /* Seasons In The Sun.mp3 */; };
 		875EDB3D2BBB2FD4005A82B3 /* KaraokeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875EDB3C2BBB2FD4005A82B3 /* KaraokeMode.swift */; };
@@ -33,6 +32,7 @@
 		875EDB432BBB302D005A82B3 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875EDB422BBB302D005A82B3 /* MusicPlayer.swift */; };
 		875EDB452BBB3047005A82B3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875EDB442BBB3047005A82B3 /* Profile.swift */; };
 		87B3C35D2BB1C99F002D13EC /* Tuesday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 87B3C35C2BB1C99F002D13EC /* Tuesday.mp3 */; };
+		87D269E22BC7100C0079BC7C /* KaraokePlayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D269E12BC7100C0079BC7C /* KaraokePlayList.swift */; };
 		B8DDF6C92BC624C700C32214 /* SongManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DDF6C82BC624C700C32214 /* SongManager.swift */; };
 		B8DDF6CD2BC6252600C32214 /* TagsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DDF6CB2BC6252600C32214 /* TagsModel.swift */; };
 		B8DDF6CE2BC6252600C32214 /* SongsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DDF6CC2BC6252600C32214 /* SongsModel.swift */; };
@@ -82,7 +82,6 @@
 		1972403B2BC4767A00B58C34 /* Adele - Rolling in the Deep (Explicit).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Adele - Rolling in the Deep (Explicit).mp3"; path = "Music_Library/Songs/Adele - Rolling in the Deep (Explicit).mp3"; sourceTree = SOURCE_ROOT; };
 		1972403C2BC4767A00B58C34 /* Aimer - Ref_rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Aimer - Ref_rain.mp3"; path = "Music_Library/Songs/Aimer - Ref_rain.mp3"; sourceTree = SOURCE_ROOT; };
 		197240442BC4770C00B58C34 /* allSongs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = allSongs.swift; sourceTree = "<group>"; };
-		197240492BC4F91900B58C34 /* KaraokeOnStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaraokeOnStart.swift; sourceTree = "<group>"; };
 		19E90FFB2BBE325A00E49E59 /* Seasons In The Sun.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Seasons In The Sun.lrc"; sourceTree = "<group>"; };
 		19E90FFD2BBE329300E49E59 /* Seasons In The Sun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Seasons In The Sun.mp3"; sourceTree = "<group>"; };
 		875EDB3C2BBB2FD4005A82B3 /* KaraokeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaraokeMode.swift; sourceTree = "<group>"; };
@@ -91,6 +90,7 @@
 		875EDB422BBB302D005A82B3 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		875EDB442BBB3047005A82B3 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		87B3C35C2BB1C99F002D13EC /* Tuesday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Tuesday.mp3; sourceTree = "<group>"; };
+		87D269E12BC7100C0079BC7C /* KaraokePlayList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaraokePlayList.swift; sourceTree = "<group>"; };
 		B8DDF6C82BC624C700C32214 /* SongManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongManager.swift; sourceTree = "<group>"; };
 		B8DDF6CB2BC6252600C32214 /* TagsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsModel.swift; sourceTree = "<group>"; };
 		B8DDF6CC2BC6252600C32214 /* SongsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongsModel.swift; sourceTree = "<group>"; };
@@ -187,8 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				875EDB3C2BBB2FD4005A82B3 /* KaraokeMode.swift */,
-				197240492BC4F91900B58C34 /* KaraokeOnStart.swift */,
 				875EDB3E2BBB2FEE005A82B3 /* ListenTogether.swift */,
+				87D269E12BC7100C0079BC7C /* KaraokePlayList.swift */,
 				B8DDF6CF2BC6254900C32214 /* NewLibrary.swift */,
 				B8DDF6D12BC6257100C32214 /* Search.swift */,
 				875EDB422BBB302D005A82B3 /* MusicPlayer.swift */,
@@ -421,6 +421,7 @@
 				F2B1E4502BAB83A10000DEB4 /* ContentView.swift in Sources */,
 				B8DDF6CE2BC6252600C32214 /* SongsModel.swift in Sources */,
 				B8DDF6C92BC624C700C32214 /* SongManager.swift in Sources */,
+				87D269E22BC7100C0079BC7C /* KaraokePlayList.swift in Sources */,
 				875EDB432BBB302D005A82B3 /* MusicPlayer.swift in Sources */,
 				B8DDF6CD2BC6252600C32214 /* TagsModel.swift in Sources */,
 				197240452BC4770C00B58C34 /* allSongs.swift in Sources */,
@@ -429,7 +430,6 @@
 				B8DDF6D02BC6254900C32214 /* NewLibrary.swift in Sources */,
 				875EDB412BBB301A005A82B3 /* MusicLibrary.swift in Sources */,
 				875EDB3D2BBB2FD4005A82B3 /* KaraokeMode.swift in Sources */,
-				1972404A2BC4F91900B58C34 /* KaraokeOnStart.swift in Sources */,
 				B8DDF6D22BC6257100C32214 /* Search.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

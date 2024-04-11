@@ -2,7 +2,7 @@ import SwiftUI
 
 struct Profile: View {
     // 假设有五个不同的头像图片名称
-    let profileImages = ["mm", "milet_drown", "mm3", "mm4", "mm5"]
+    let profileImages = ["sun", "qiushi", "tang", "robert", "ruiyang"]
     let userName = "Student"
     let userDescription = "Karaoke enthusiast. Love to explore new songs and share with friends."
     let topSongs = [
@@ -11,7 +11,7 @@ struct Profile: View {
         ("Polar Express", "when christmas comes to town"),
         // 更多歌曲...
     ]
-    let profilename=["mm", "milet_drown", "mm3", "mm4", "mm5"]
+    let profilename=["Le Sun", "Shi Qiu", "Kunye Tang", "Robert Zhang", "Ruiyang Chen"]
     @State private var showThumbUp = false
 
     var body: some View {
@@ -34,7 +34,7 @@ struct Profile: View {
                         .fontWeight(.bold)
                         .padding(.leading, 18) // 根据需要调整间距
                 }
-                .padding(.top, 80)
+                .padding(.top, 50)
                 .padding(.bottom, 20)
                 
                 // 用户描述
@@ -52,28 +52,28 @@ struct Profile: View {
                 // 数据部分
                 HStack {
                     VStack {
-                        Text("300")
+                        Text("5")
                             .font(.system(size: 26))
                             .fontWeight(.bold)
-                        Text("Following")
+                        Text("Songs")
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }
                     Spacer()
                     VStack {
-                        Text("3.5M")
+                        Text("63")
                             .font(.system(size: 26))
                             .fontWeight(.bold)
-                        Text("Followers")
+                        Text("Days Joined")
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }
                     Spacer()
                     VStack {
-                        Text("20")
+                        Text("256")
                             .font(.system(size: 26))
                             .fontWeight(.bold)
-                        Text("Friends")
+                        Text("Hours Played")
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }
@@ -131,23 +131,26 @@ struct Profile: View {
                 
                 VStack(alignment: .leading, spacing: 10) {
                     ForEach(profileImages.indices, id: \.self) { index in
-                        HStack {
-                            Image(profileImages[index]) 
+                        HStack(spacing: 50) { // Added spacing between elements in HStack
+                            Image(profileImages[index])
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 60, height: 60)
                                 .clipShape(Circle())
                                 .shadow(radius: 2)
                                 .overlay(Circle().stroke(Color.white, lineWidth: 1))
-                            Spacer()
-                            Text(profilename[index])
-                                .font(.title)
-                                .padding(.leading, 8)
-                                .fontWeight(.bold)
                             
+                            Text(profilename[index])
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.trailing, 30)
                         }
                     }
+                
+
                 }
+
                 .padding([.leading,.trailing], 20)
                 .padding(.top, 20)
                 .padding(.bottom, 20)
@@ -155,6 +158,7 @@ struct Profile: View {
                 
                 
                 // 显示名为“heatmap-removebg-preview”的图片，并与时钟符号并排显示
+                /*
                 HStack {
                     Image("heatmap-removebg-preview")
                         .resizable()
@@ -175,7 +179,7 @@ struct Profile: View {
                     Spacer()
                 }
                 .padding(.bottom, 20)
-                
+                */
                 // 水平滑动区域
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
@@ -199,13 +203,8 @@ struct Profile: View {
                 
                 Spacer()
             }
-            .background(
-                Image("wallpapers")
-                    .resizable()
-                    .blur(radius: 20)
-                    .overlay(Color.white.opacity(0.85))
-                    .edgesIgnoringSafeArea(.all)
-            )
+            .background(.black.opacity(0.8))
+            
         }
         .edgesIgnoringSafeArea(.all)
     }

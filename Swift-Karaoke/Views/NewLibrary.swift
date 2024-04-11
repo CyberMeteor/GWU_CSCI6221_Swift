@@ -40,7 +40,7 @@ struct NewLibrary: View {
         GeometryReader { size in
             VStack(alignment: .leading){
                 HStack(spacing: 15) {
-                    Text("Good morning GW✨")
+                    Text("Good morning Le✨")
                         .font(.title2)
                     
                     Spacer()
@@ -48,7 +48,7 @@ struct NewLibrary: View {
                     Image(systemName: "bell")
                         .imageScale(.large)
                     
-                    Image("GW_Avatar")
+                    Image("LeAvatar")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 40, height: 40)

@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            KaraokeMode(songName: "Perfect")
+            KaraokePlayList()
                 .tabItem() {
                     Image(systemName: "music.mic.circle.fill")
                     Text("Karaoke")
@@ -67,7 +67,7 @@ struct ContentView: View {
                     Text("Profile")
                 }
         }
-        .accentColor(.purple)
+        .accentColor(.blue)
         .onAppear() {
             let backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
             UITabBar.appearance().backgroundColor = backgroundColor
