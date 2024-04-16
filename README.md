@@ -139,6 +139,9 @@ Project Link: [https://github.com/CyberMeteor/GWU_CSCI6221_Swift/tree/main](http
 [license-url]: https://opensource.org/licenses/MIT
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/shi1qiu
+
+<!-- can be changed to your own -->
+
 [product-screenshot]: images/screenshot.png
 [Swift-url]: https://img.shields.io/badge/Swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white
 [SwiftUI-url]: https://img.shields.io/badge/SwiftUI-0D101E?style=for-the-badge&logo=swift&logoColor=white
