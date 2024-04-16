@@ -54,7 +54,21 @@
 
 ## About The Project
 
-[![SongSpark Screen Shot][product-screenshot]](https://example.com)
+<div align="center">
+  <a href="https://example.com">
+    <img src="images/screenshot.png" alt="SongSpark Screenshot 1" width="200" height="auto" style="margin-right: 10px;">
+  </a>
+  <a href="https://example.com">
+    <img src="images/ss2.png" alt="SongSpark Screenshot 2" width="200" height="auto" style="margin-right: 10px;">
+  </a>
+  <a href="https://example.com">
+    <img src="images/ss3.png" alt="SongSpark Screenshot 3" width="200" height="auto" style="margin-right: 10px;">
+  </a>
+  <a href="https://example.com">
+    <img src="images/ss4.png" alt="SongSpark Screenshot 4" width="200" height="auto">
+  </a>
+</div>
+
 
 SongSpark is a lightweight iOS music and karaoke player designed to offer a premium music experience. It allows users to sort songs, create playlists, search through their library, and enjoy karaoke with real-time lyrics scrolling.
 
@@ -103,30 +117,26 @@ Contributions are what make the open source community such an amazing place to l
 
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License.
 
 ## Contact
 
 Project Link: [https://github.com/CyberMeteor/GWU_CSCI6221_Swift/tree/main](https://github.com/CyberMeteor/GWU_CSCI6221_Swift/tree/main)
 
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
 
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/CyberMeteor/GWU_CSCI6221_Swift.svg?style=for-the-badge
 [contributors-url]: https://github.com/CyberMeteor/GWU_CSCI6221_Swift/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/CyberMeteor/GWU_CSCI6221_Swift.svg?style=for-the-badge
 [forks-url]: https://github.com/CyberMeteor/GWU_CSCI6221_Swift/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/CyberMeteor/GWU_CSCI6221_Swift.svg?style=for-the-badge
 [stars-url]: https://github.com/CyberMeteor/GWU_CSCI6221_Swift/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/CyberMeteor/GWU_CSCI6221_Swift.svg?style=for-the-badge
 [issues-url]: https://github.com/CyberMeteor/GWU_CSCI6221_Swift/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/CyberMeteor/GWU_CSCI6221_Swift/LICENSE.txt
+[license-shield]: https://img.shields.io/github/license/CyberMeteor/GWU_CSCI6221_Swift.svg?style=for-the-badge
+[license-url]: https://github.com/CyberMeteor/GWU_CSCI6221_Swift/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/shi1qiu
 [product-screenshot]: images/screenshot.png
