@@ -4,7 +4,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+[![License: MIT][license-shield]][license-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -19,7 +19,7 @@
     <a href="https://github.com/CyberMeteor/GWU_CSCI6221_Swift/tree/main"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/CyberMeteor/GWU_CSCI6221_Swift/tree/main">View Demo</a>
+    <a href="https://github.com/ryan0980/GWU_CSCI6221_Swift/tree/main/Demo/Demo.mp4">View Demo</a>
     ·
     <a href="https://github.com/CyberMeteor/GWU_CSCI6221_Swift/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
@@ -135,8 +135,8 @@ Project Link: [https://github.com/CyberMeteor/GWU_CSCI6221_Swift/tree/main](http
 [stars-url]: https://github.com/CyberMeteor/GWU_CSCI6221_Swift/stargazers
 [issues-shield]: https://img.shields.io/github/issues/CyberMeteor/GWU_CSCI6221_Swift.svg?style=for-the-badge
 [issues-url]: https://github.com/CyberMeteor/GWU_CSCI6221_Swift/issues
-[license-shield]: https://img.shields.io/github/license/CyberMeteor/GWU_CSCI6221_Swift.svg?style=for-the-badge
-[license-url]: https://github.com/CyberMeteor/GWU_CSCI6221_Swift/blob/master/LICENSE.txt
+[license-shield]: https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge
+[license-url]: https://opensource.org/licenses/MIT
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/shi1qiu
 [product-screenshot]: images/screenshot.png
